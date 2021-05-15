@@ -16,6 +16,18 @@
 		2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2254D1A92644788F00A2504D /* LaunchScreen.storyboard */; };
 		2254D1B62644788F00A2504D /* CurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254D1B52644788F00A2504D /* CurrencyTests.swift */; };
 		2254D1C12644788F00A2504D /* CurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254D1C02644788F00A2504D /* CurrencyUITests.swift */; };
+		2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254D1E7264480F400A2504D /* HomeCollectionViewCell.swift */; };
+		2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2254D1E8264480F400A2504D /* HomeCollectionViewCell.xib */; };
+		CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */; };
+		CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */; };
+		CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */; };
+		CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */; };
+		CA57C110264FF26900790084 /* LebanonLera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C10F264FF26900790084 /* LebanonLera.swift */; };
+		CA57C115264FF29D00790084 /* Gold.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C114264FF29D00790084 /* Gold.swift */; };
+		CA57C11A264FF2C100790084 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C119264FF2C100790084 /* Currency.swift */; };
+		CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E83261FE9BA00D854FA /* DollarViewController.swift */; };
+		CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */; };
+		CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +63,19 @@
 		2254D1BC2644788F00A2504D /* CurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2254D1C02644788F00A2504D /* CurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyUITests.swift; sourceTree = "<group>"; };
 		2254D1C22644788F00A2504D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2254D1E326447C2B00A2504D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		2254D1E7264480F400A2504D /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
+		2254D1E8264480F400A2504D /* HomeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCollectionViewCell.xib; sourceTree = "<group>"; };
+		CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buy&SellCollectionViewCell.swift"; sourceTree = "<group>"; };
+		CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Buy&SellCollectionViewCell.xib"; sourceTree = "<group>"; };
+		CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangersCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangersCollectionViewCell.xib; sourceTree = "<group>"; };
+		CA57C10F264FF26900790084 /* LebanonLera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebanonLera.swift; sourceTree = "<group>"; };
+		CA57C114264FF29D00790084 /* Gold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gold.swift; sourceTree = "<group>"; };
+		CA57C119264FF2C100790084 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		CACC8E83261FE9BA00D854FA /* DollarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarViewController.swift; sourceTree = "<group>"; };
+		CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarCollectionViewCell.swift; sourceTree = "<group>"; };
+		CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DollarCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +126,10 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				CA57C122264FF7F600790084 /* Home */,
+				CACC8E82261FE8E200D854FA /* dollar_ic */,
 				2254D19B2644788E00A2504D /* AppDelegate.swift */,
 				2254D19D2644788E00A2504D /* SceneDelegate.swift */,
-				2254D19F2644788E00A2504D /* ViewController.swift */,
 				2254D1A12644788E00A2504D /* Main.storyboard */,
 				2254D1A72644788F00A2504D /* Assets.xcassets */,
 				2254D1A92644788F00A2504D /* LaunchScreen.storyboard */,
@@ -129,6 +155,41 @@
 				2254D1C22644788F00A2504D /* Info.plist */,
 			);
 			path = CurrencyUITests;
+			sourceTree = "<group>";
+		};
+		CA57C11E264FF32300790084 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CA57C119264FF2C100790084 /* Currency.swift */,
+				CA57C114264FF29D00790084 /* Gold.swift */,
+				CA57C10F264FF26900790084 /* LebanonLera.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CA57C122264FF7F600790084 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2254D1E7264480F400A2504D /* HomeCollectionViewCell.swift */,
+				2254D1E8264480F400A2504D /* HomeCollectionViewCell.xib */,
+				2254D19F2644788E00A2504D /* ViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CACC8E82261FE8E200D854FA /* dollar_ic */ = {
+			isa = PBXGroup;
+			children = (
+				CA57C11E264FF32300790084 /* Classes */,
+				CACC8E83261FE9BA00D854FA /* DollarViewController.swift */,
+				CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */,
+				CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */,
+				CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */,
+				CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */,
+				CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */,
+				CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */,
+			);
+			path = dollar_ic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,9 +295,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */,
+				CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */,
+				CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */,
 				2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */,
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
 				2254D1A32644788E00A2504D /* Main.storyboard in Resources */,
+				2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,10 +326,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */,
+				2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */,
+				CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */,
 				2254D1A62644788E00A2504D /* Currency.xcdatamodeld in Sources */,
+				CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
+				CA57C110264FF26900790084 /* LebanonLera.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,
+				CA57C115264FF29D00790084 /* Gold.swift in Sources */,
+				CA57C11A264FF2C100790084 /* Currency.swift in Sources */,
+				CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2254D1A22644788E00A2504D /* Base */,
+				2254D1E326447C2B00A2504D /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
