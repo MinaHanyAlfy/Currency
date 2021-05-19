@@ -20,15 +20,17 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     
     func fillData(index:Int){
         tabButton.setTitle(buttonArray[index], for: .normal)
-        tabButton.accessibilityLabel = "create"
-        
-        
+        tabButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
     }
     func setUp()
     {
         tabButton.backgroundColor = UIColor.systemOrange
         
       //
-        
     }
+    @objc func actionButton (sender: UIButton!){
+        print("Button tapped")
+        //refresh View Controller and Disable Exchanger and share price
+    }
+    
 }

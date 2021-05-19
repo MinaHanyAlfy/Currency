@@ -19,7 +19,11 @@ class DollarViewController: UIViewController {
     
     private var data: CurrencyModel?{
         didSet{
-            print(data)
+            //print(data)\
+            //DispatchQueue.main.async {
+              //  self.buySellCollectionView.reloadData()
+            //}
+       
         }
     }
     
@@ -46,16 +50,6 @@ class DollarViewController: UIViewController {
         removeAdsBtn.clipsToBounds = true
     }
     
-    private func fetchData(){
-        NetworkLayer.shared.getResults(clientRequest: .getDefault(), decodingModel: CurrencyModel.self) { [weak self] (response) in
-            switch response{
-            case .success(let data):
-                self?.data = data
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
-    }
     
 }
 
@@ -64,9 +58,15 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case dollarCollectionView:
+            //return (data?.data.count) ?? 0
             return 4
         case buttonCollectionView:
             return 3
+        case buySellCollectionView:
+            if data != nil {
+                return (data?.data.count) ?? 0
+            }
+            return 0
         default:
             return 2
         }
@@ -96,11 +96,11 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             
         case buySellCollectionView:
             let cell = buySellCollectionView.dequeueReusableCell(withReuseIdentifier: "Buy&SellCollectionViewCell", for: indexPath) as! Buy_SellCollectionViewCell
-            cell.titleLBL.text = "Dollar Lebanion"
+            cell.titleLBL.text = data?.data[indexPath.row].option3
             cell.buyLBL.text = "Buy"
             cell.sellLBL.text = "Sell"
-            cell.buyNumberLBL.text = "3305"
-            cell.sellNumberLBL.text = "3307"
+            cell.buyNumberLBL.text = data?.data[indexPath.row].option2
+            cell.sellNumberLBL.text = data?.data[indexPath.row].option2
             cell.arrowImageView.image = UIImage(systemName: "arrow.up.forward.app")
             return cell
         case buttonCollectionView:
@@ -115,6 +115,20 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         }
         
     }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        switch collectionView {
+//        case buttonCollectionView:
+//            switch buttonCollectionView {
+//            case buttonCollectionView.cellForItem(at: indexPath):
+//        
+//            
+//            default:
+//                self.dollarCollectionView.reloadData()
+//            }
+//        default:
+//            self.dollarCollectionView.reloadData()
+//        }
+//    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case dollarCollectionView:
@@ -130,6 +144,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
                           , height: collectionView.frame.height - 10)
         }
     }
+    
     
     //   // func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     //        switch collectionView {
@@ -149,52 +164,16 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     //        }
     //    }
     // MARK:- Call Api To Get Data
-//    func callApi(){
-//        NetworkLayer.shared.getResults(description: "currency by type ", pageNumber: 4) { result in
-//            switch result {
-//            case .success(let results):
-//                print(results)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
     
-//    func getData()  {
-//        Network.shared.getDataFromAPI(api: "https://win1withus.com/del/api/currency_by_type-4") { [weak self](data, error) in
-//
-//            let weakSelf = self
-//            var fetchedSports : [LebanonLera] = []
-//            if let dataDictionary = data as? [String:Any]{
-//                if let currArray = dataDictionary["data"] as? [Dictionary<String,Any>]{
-//                    for dataCurrency in currArray {
-//                        let newCurr = LebanonLera(from: currArray as! Decoder)
-//                        newCurr.id = dataCurrency["id"] as! Int
-//                        newCurr.option1 = dataCurrency["option1"] as! String
-//                        newCurr.option2 = dataCurrency["option2"] as! String
-//                        newCurr.option3 = dataCurrency["option3"] as! String
-//                        newCurr.last_sell = dataCurrency["last_sell"] as! String
-//                        newCurr.last_buy = dataCurrency["last_buy"] as! String
-//                        newCurr.relative
-//
-//
-//
-//                    }
-//                    let relative : String?
-//                    let type : String?
-//                    let country : String?
-//                    let state : Int?
-//                    let created_at : String?
-//                    let updated_at : String?
-//
-//
-//                    //print(weakSelf?.sportsArr[0].strSport)
-//                }
-//            }
-//            self!.dollarCollectionView.reloadData()
-//
-//        }
-//
-//
+    private func fetchData(){
+        NetworkLayer.shared.getResults(clientRequest: .getDefault(), decodingModel: CurrencyModel.self) { [weak self] (response) in
+            switch response{
+            case .success(let data):
+                self?.data = data
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
+}
 

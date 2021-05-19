@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EIP-WC-2ff">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZXJ-9N-ecy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1815.9420289855075" y="53.571428571428569"/>
+            <point key="canvasLocation" x="2601" y="-119"/>
         </scene>
         <!--Dollar-->
         <scene sceneID="8ik-LV-58g">
@@ -165,6 +165,9 @@
                                                 <state key="normal" title="Share Price">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="Day-oB-5HF" kind="show" id="BEc-JO-1Al"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cph-rl-Vqv">
                                                 <rect key="frame" x="237" y="879" width="145" height="44"/>
@@ -175,6 +178,9 @@
                                                 <state key="normal" title="Remove Ads">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <segue destination="9cf-76-ygJ" kind="show" id="x17-de-pto"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -231,7 +237,6 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y83-30-zeV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OxV-YD-V15" firstAttribute="leading" secondItem="y83-30-zeV" secondAttribute="leading" id="39u-7r-BO5"/>
                             <constraint firstItem="y83-30-zeV" firstAttribute="bottom" secondItem="HpE-J8-SmI" secondAttribute="bottom" id="6mh-xH-baQ"/>
@@ -255,7 +260,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFr-GP-hux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4318.840579710145" y="-254.46428571428569"/>
+            <point key="canvasLocation" x="4084" y="-641"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="R4h-Hj-Nef">
+            <objects>
+                <viewController id="Day-oB-5HF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rnm-3u-C3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k9P-dx-iKh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="589.5"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOe-fp-hTZ">
+                                <rect key="frame" x="16" y="621.5" width="165.5" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.78698048860000003" blue="0.46819372100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cYH-F5-qhk"/>
+                                </constraints>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3Tf-sb-hcf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="k9P-dx-iKh" firstAttribute="leading" secondItem="3Tf-sb-hcf" secondAttribute="leading" id="1rb-wO-lBM"/>
+                            <constraint firstItem="3Tf-sb-hcf" firstAttribute="trailing" secondItem="k9P-dx-iKh" secondAttribute="trailing" id="SLG-Lh-giW"/>
+                            <constraint firstItem="tOe-fp-hTZ" firstAttribute="width" secondItem="Rnm-3u-C3Q" secondAttribute="width" multiplier="0.4" id="WaT-gP-zMp"/>
+                            <constraint firstItem="tOe-fp-hTZ" firstAttribute="top" secondItem="k9P-dx-iKh" secondAttribute="bottom" constant="32" id="XYQ-3S-kbU"/>
+                            <constraint firstItem="k9P-dx-iKh" firstAttribute="top" secondItem="3Tf-sb-hcf" secondAttribute="top" id="fN2-gM-YIo"/>
+                            <constraint firstItem="k9P-dx-iKh" firstAttribute="height" secondItem="Rnm-3u-C3Q" secondAttribute="height" multiplier="0.7" id="wd7-TZ-c6x"/>
+                            <constraint firstItem="tOe-fp-hTZ" firstAttribute="leading" secondItem="3Tf-sb-hcf" secondAttribute="leading" constant="16" id="wm3-AX-4U6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="nct-6d-hAR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZZ-V4-Zil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5040.579710144928" y="-901.33928571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1oO-3m-jmT">
+            <objects>
+                <viewController id="9cf-76-ygJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2ET-PN-I7n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1Bn-Qp-zNH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ybR-Jp-4Uq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HAx-Ke-q2z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6082" y="-656"/>
         </scene>
         <!--Currencies-->
         <scene sceneID="1mG-jF-dWu">
@@ -305,7 +367,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-pG-AhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905.79710144927549" y="53.571428571428569"/>
+            <point key="canvasLocation" x="1449" y="-88"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -314,6 +376,9 @@
         <image name="dollar_icon" width="256" height="256"/>
         <image name="dollarsign.square" catalog="system" width="128" height="114"/>
         <image name="suit.diamond" catalog="system" width="107" height="128"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

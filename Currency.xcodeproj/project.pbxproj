@@ -157,8 +157,8 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
-				CADC643626546E69003E0032 /* Utilities */,
 				CA57C122264FF7F600790084 /* Home */,
+				CADC643626546E69003E0032 /* Utilities */,
 				CACC8E82261FE8E200D854FA /* dollar_ic */,
 				2254D19B2644788E00A2504D /* AppDelegate.swift */,
 				2254D19D2644788E00A2504D /* SceneDelegate.swift */,

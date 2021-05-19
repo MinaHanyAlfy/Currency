@@ -12,13 +12,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var adView: UIImageView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         registerCell()
     }
-
+    
     private func setupUI(){
         
         self.navigationController?.navigationBar.backgroundColor = .orange
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
     private func registerCell(){
         homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }
-
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -52,9 +52,20 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: homeCollectionView.frame.width / 2.1 , height: homeCollectionView.frame.height / 3.2)
     }
-    //func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView == homeCollectionView else {
+            return
+        }
+        switch indexPath.row {
         
-  //  }
+        case 1:
+            let vc =   self.storyboard?.instantiateViewController(withIdentifier: "DollarViewController") as! DollarViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        default:
+        print("tapped")
+        }
+        
+    }
     
 }
 
