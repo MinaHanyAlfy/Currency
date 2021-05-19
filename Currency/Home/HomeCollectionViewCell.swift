@@ -37,5 +37,6 @@ class HomeCollectionViewCell: UICollectionViewCell {
         cellImage.image = UIImage(named: imageArr[index])
         cellLBL.text = titleArr[index]
     }
+    
 
 }

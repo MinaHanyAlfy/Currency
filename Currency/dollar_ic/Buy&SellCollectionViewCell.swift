@@ -11,9 +11,11 @@ class Buy_SellCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUpUI()
         // Initialization code
     }
-
+    @IBOutlet weak var mainView: UIView!
+    
     @IBOutlet weak var titleLBL: UILabel!
     @IBOutlet weak var buyLBL: UILabel!
     @IBOutlet weak var sellLBL: UILabel!
@@ -21,4 +23,9 @@ class Buy_SellCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var ratioLBL: UILabel!
     @IBOutlet weak var buyNumberLBL: UILabel!
     @IBOutlet weak var sellNumberLBL: UILabel!
+    func setUpUI (){
+        mainView.layer.cornerRadius = 10
+        mainView.clipsToBounds = true
+        
+    }
 }

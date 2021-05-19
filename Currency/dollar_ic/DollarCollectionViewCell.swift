@@ -21,11 +21,10 @@ class DollarCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var priceLBL: UILabel!
     private func setUp(){
         mainView.layer.borderColor = UIColor.systemGray4.cgColor
-        mainView.layer.borderWidth = 1
-        
-        
-        
-        
-        
+            mainView.layer.borderWidth = 1
+            mainView.layer.shadowColor = UIColor.black.cgColor
+          mainView.layer.shadowOpacity = 1
+           mainView.layer.shadowOffset = .zero
+           mainView.layer.shadowRadius = 10
     }
 }

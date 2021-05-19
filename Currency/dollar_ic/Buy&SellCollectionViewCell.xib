@@ -81,7 +81,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="uLT-8F-MTj" secondAttribute="bottom" constant="8" id="4FH-2e-tJe"/>
                             <constraint firstItem="6aC-Mn-av1" firstAttribute="leading" secondItem="JY7-r2-e2G" secondAttribute="leading" id="BDY-ST-8ko"/>
@@ -120,6 +120,7 @@
                 <outlet property="arrowImageView" destination="Aij-wi-dif" id="uG5-S1-qu8"/>
                 <outlet property="buyLBL" destination="tod-gA-Mri" id="1S7-xQ-arh"/>
                 <outlet property="buyNumberLBL" destination="uLT-8F-MTj" id="Tvx-xZ-whi"/>
+                <outlet property="mainView" destination="JY7-r2-e2G" id="mAN-wn-eho"/>
                 <outlet property="ratioLBL" destination="QyE-yD-MD9" id="loR-al-mPl"/>
                 <outlet property="sellLBL" destination="8pD-tH-hGV" id="AjO-us-Du5"/>
                 <outlet property="sellNumberLBL" destination="E9x-PO-mgt" id="EeW-eu-bUi"/>
@@ -130,9 +131,6 @@
     </objects>
     <resources>
         <image name="arrow.up.forward.app" catalog="system" width="128" height="114"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -18,10 +18,10 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIL-0l-tV9">
-                        <rect key="frame" x="0.0" y="0.0" width="173" height="101"/>
+                        <rect key="frame" x="8" y="8" width="157" height="85"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homekit" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="naE-ZT-cvh">
-                                <rect key="frame" x="16" y="8" width="24" height="24"/>
+                                <rect key="frame" x="8" y="8" width="24" height="24"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="24" id="7gq-Mf-JRB"/>
@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ofiicial Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEJ-66-ARl">
-                                <rect key="frame" x="48" y="8" width="117" height="24"/>
+                                <rect key="frame" x="40" y="8" width="109" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="TTs-hZ-mPH"/>
                                 </constraints>
@@ -38,32 +38,32 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-KB-tgg">
-                                <rect key="frame" x="0.0" y="40" width="173" height="1"/>
+                                <rect key="frame" x="8" y="40" width="141" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="fv4-Ij-Qvq"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1507.5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3P1-G4-QHE">
-                                <rect key="frame" x="0.0" y="65" width="173" height="12"/>
+                                <rect key="frame" x="8" y="49" width="141" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jSO-KB-tgg" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" id="0mf-Db-Kot"/>
-                            <constraint firstItem="3P1-G4-QHE" firstAttribute="top" secondItem="jSO-KB-tgg" secondAttribute="bottom" constant="24" id="0rb-rd-Ck4"/>
-                            <constraint firstAttribute="bottom" secondItem="3P1-G4-QHE" secondAttribute="bottom" constant="24" id="2vU-xH-pT0"/>
-                            <constraint firstAttribute="trailing" secondItem="jSO-KB-tgg" secondAttribute="trailing" id="OoE-Oo-gHL"/>
+                            <constraint firstItem="jSO-KB-tgg" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" constant="8" id="0mf-Db-Kot"/>
+                            <constraint firstItem="3P1-G4-QHE" firstAttribute="top" secondItem="jSO-KB-tgg" secondAttribute="bottom" constant="8" id="0rb-rd-Ck4"/>
+                            <constraint firstAttribute="bottom" secondItem="3P1-G4-QHE" secondAttribute="bottom" constant="8" id="2vU-xH-pT0"/>
+                            <constraint firstAttribute="trailing" secondItem="jSO-KB-tgg" secondAttribute="trailing" constant="8" id="OoE-Oo-gHL"/>
                             <constraint firstItem="jSO-KB-tgg" firstAttribute="top" secondItem="naE-ZT-cvh" secondAttribute="bottom" constant="8" id="Oxu-kS-PGB"/>
                             <constraint firstItem="naE-ZT-cvh" firstAttribute="top" secondItem="uIL-0l-tV9" secondAttribute="top" constant="8" id="UOn-4w-04H"/>
-                            <constraint firstItem="3P1-G4-QHE" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" id="VdC-ib-Xld"/>
-                            <constraint firstItem="naE-ZT-cvh" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" constant="16" id="WQe-qM-B1Z"/>
+                            <constraint firstItem="3P1-G4-QHE" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" constant="8" id="VdC-ib-Xld"/>
+                            <constraint firstItem="naE-ZT-cvh" firstAttribute="leading" secondItem="uIL-0l-tV9" secondAttribute="leading" constant="8" id="WQe-qM-B1Z"/>
                             <constraint firstItem="dEJ-66-ARl" firstAttribute="leading" secondItem="naE-ZT-cvh" secondAttribute="trailing" constant="8" id="blN-JK-eXq"/>
                             <constraint firstAttribute="trailing" secondItem="dEJ-66-ARl" secondAttribute="trailing" constant="8" id="ciA-Ab-oPi"/>
-                            <constraint firstAttribute="trailing" secondItem="3P1-G4-QHE" secondAttribute="trailing" id="i9F-Tm-92b"/>
+                            <constraint firstAttribute="trailing" secondItem="3P1-G4-QHE" secondAttribute="trailing" constant="8" id="i9F-Tm-92b"/>
                             <constraint firstItem="dEJ-66-ARl" firstAttribute="top" secondItem="uIL-0l-tV9" secondAttribute="top" constant="8" id="vhT-kE-Gl0"/>
                         </constraints>
                     </view>
@@ -71,13 +71,14 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstItem="uIL-0l-tV9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="N0L-7o-Oyc"/>
-                <constraint firstAttribute="bottom" secondItem="uIL-0l-tV9" secondAttribute="bottom" id="bBK-gR-E1U"/>
-                <constraint firstAttribute="trailing" secondItem="uIL-0l-tV9" secondAttribute="trailing" id="enA-pp-RIf"/>
-                <constraint firstItem="uIL-0l-tV9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="iI6-SL-lua"/>
+                <constraint firstItem="uIL-0l-tV9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="N0L-7o-Oyc"/>
+                <constraint firstAttribute="bottom" secondItem="uIL-0l-tV9" secondAttribute="bottom" constant="8" id="bBK-gR-E1U"/>
+                <constraint firstAttribute="trailing" secondItem="uIL-0l-tV9" secondAttribute="trailing" constant="8" id="enA-pp-RIf"/>
+                <constraint firstItem="uIL-0l-tV9" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="iI6-SL-lua"/>
             </constraints>
             <size key="customSize" width="173" height="101"/>
             <connections>
+                <outlet property="mainView" destination="uIL-0l-tV9" id="Fze-Ii-h65"/>
                 <outlet property="priceLBL" destination="3P1-G4-QHE" id="u58-fE-7zC"/>
                 <outlet property="titleImageView" destination="naE-ZT-cvh" id="7ih-AT-Utt"/>
                 <outlet property="titleOfiicialLBL" destination="dEJ-66-ARl" id="9gl-V1-Eq0"/>
@@ -87,9 +88,6 @@
     </objects>
     <resources>
         <image name="homekit" catalog="system" width="128" height="106"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
