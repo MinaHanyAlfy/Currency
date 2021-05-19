@@ -11,6 +11,7 @@ enum Curriencies{
     case getDefault(id: Int = 4)
     case getGoldPrice(id: Int = 7)
     case getCurriencyPrice(id: Int = 6)
+    case getInternationalPrice(id: Int = 5)
 }
 
 extension Curriencies: EndPoint{
@@ -25,6 +26,8 @@ extension Curriencies: EndPoint{
         case .getGoldPrice(let id):
             return "\(id)"
         case .getCurriencyPrice(let id):
+            return "\(id)"
+        case .getInternationalPrice(let id):
             return "\(id)"
         }
     }

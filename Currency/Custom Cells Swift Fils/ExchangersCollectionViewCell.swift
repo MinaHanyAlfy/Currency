@@ -27,4 +27,12 @@ class ExchangersCollectionViewCell: UICollectionViewCell {
         mainView.layer.shadowOffset = .zero
         mainView.layer.shadowOpacity = 1
     }
+    var titleArray = ["Official Price","Exchangers"]
+    var pricearray = ["1507.5","3900"]
+    var imageArray = ["building.2.fill","house.fill"]
+    func fillData(index: Int){
+        titleOfiicialLBL.text = titleArray[index]
+        priceLBL.text = pricearray[index]
+        titleImageView.image = UIImage(systemName: imageArray[index])
+    }
 }

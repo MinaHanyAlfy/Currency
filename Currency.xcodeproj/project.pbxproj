@@ -35,7 +35,9 @@
 		CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */; };
 		CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC643726546E8B003E0032 /* ErorrMessage.swift */; };
 		CADC643D26547023003E0032 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC643C26547023003E0032 /* NetworkLayer.swift */; };
-		CADC64502654D256003E0032 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC644F2654D256003E0032 /* Network.swift */; };
+		CADC646326552F78003E0032 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646226552F78003E0032 /* ShareViewController.swift */; };
+		CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */; };
+		CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +98,9 @@
 		CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DollarCollectionViewCell.xib; sourceTree = "<group>"; };
 		CADC643726546E8B003E0032 /* ErorrMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErorrMessage.swift; sourceTree = "<group>"; };
 		CADC643C26547023003E0032 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
-		CADC644F2654D256003E0032 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		CADC646226552F78003E0032 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBLCustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LBLCustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		FE50D18BC7E918A879D4D238 /* Pods-Currency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency.release.xcconfig"; path = "Target Support Files/Pods-Currency/Pods-Currency.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,6 +157,10 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				CADC647126553C95003E0032 /* Custom Cells Swift Fils */,
+				CADC646126552EF4003E0032 /* Share Price VC */,
+				CADC645D26552E69003E0032 /* Custom Cells Nib File */,
+				CA57C11E264FF32300790084 /* Classes */,
 				CA57C122264FF7F600790084 /* Home */,
 				CADC643626546E69003E0032 /* Utilities */,
 				CACC8E82261FE8E200D854FA /* dollar_ic */,
@@ -229,16 +237,7 @@
 		CACC8E82261FE8E200D854FA /* dollar_ic */ = {
 			isa = PBXGroup;
 			children = (
-				CA57C11E264FF32300790084 /* Classes */,
 				CACC8E83261FE9BA00D854FA /* DollarViewController.swift */,
-				CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */,
-				CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */,
-				CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */,
-				CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */,
-				CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */,
-				CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */,
-				CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */,
-				CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */,
 			);
 			path = dollar_ic;
 			sourceTree = "<group>";
@@ -248,11 +247,42 @@
 			children = (
 				CADC643726546E8B003E0032 /* ErorrMessage.swift */,
 				CADC643C26547023003E0032 /* NetworkLayer.swift */,
-				CADC644F2654D256003E0032 /* Network.swift */,
 				C55EE6B92655D710009A9E9B /* EndPoint.swift */,
 				C55EE6CC2655D915009A9E9B /* Curriencies.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CADC645D26552E69003E0032 /* Custom Cells Nib File */ = {
+			isa = PBXGroup;
+			children = (
+				CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */,
+				CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */,
+				CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */,
+				CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */,
+				CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */,
+			);
+			path = "Custom Cells Nib File";
+			sourceTree = "<group>";
+		};
+		CADC646126552EF4003E0032 /* Share Price VC */ = {
+			isa = PBXGroup;
+			children = (
+				CADC646226552F78003E0032 /* ShareViewController.swift */,
+			);
+			path = "Share Price VC";
+			sourceTree = "<group>";
+		};
+		CADC647126553C95003E0032 /* Custom Cells Swift Fils */ = {
+			isa = PBXGroup;
+			children = (
+				CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */,
+				CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */,
+				CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */,
+				CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */,
+				CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */,
+			);
+			path = "Custom Cells Swift Fils";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,6 +398,7 @@
 				CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */,
 				CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */,
 				2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */,
+				CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */,
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
 				2254D1A32644788E00A2504D /* Main.storyboard in Resources */,
 				2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */,
@@ -501,12 +532,13 @@
 				C55EE6CD2655D915009A9E9B /* Curriencies.swift in Sources */,
 				CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */,
 				2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */,
-				CADC64502654D256003E0032 /* Network.swift in Sources */,
 				CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */,
 				CADC643D26547023003E0032 /* NetworkLayer.swift in Sources */,
 				2254D1A62644788E00A2504D /* Currency.xcdatamodeld in Sources */,
+				CADC646326552F78003E0032 /* ShareViewController.swift in Sources */,
 				CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
+				CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */,
 				CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,

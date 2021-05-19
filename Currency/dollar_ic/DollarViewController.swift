@@ -18,9 +18,16 @@ class DollarViewController: UIViewController {
     
     @IBOutlet weak var dollarCollectionView: UICollectionView!
     
-        private var data: CurrencyModel?{
+    private var internationalData: CurrencyModel?{
         didSet{
-            //print(data)\
+            DispatchQueue.main.async {
+                self.dollarCollectionView.reloadData()
+            }
+            
+        }
+    }
+    private var data: CurrencyModel?{
+        didSet{
             DispatchQueue.main.async {
                 self.buySellCollectionView.reloadData()
             }
@@ -33,6 +40,7 @@ class DollarViewController: UIViewController {
         registerCells()
         setUpUI()
         fetchData(clientRequest: .getDefault())
+        fetchData()
         // Do any additional setup after loading the view.
         
     }
@@ -59,8 +67,10 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         switch collectionView {
         case dollarCollectionView:
-            //return (data?.data.count) ?? 0
-            return 4
+            if internationalData != nil{
+                return (internationalData?.data.count) ?? 0
+            }
+            return 0
         case buttonCollectionView:
             return 3
         case buySellCollectionView:
@@ -89,20 +99,20 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         switch collectionView {
         case dollarCollectionView:
             let cell = dollarCollectionView.dequeueReusableCell(withReuseIdentifier: "DollarCollectionViewCell", for: indexPath) as! DollarCollectionViewCell
-            
-            cell.nameLBL.text = "Gold"
-            cell.codeLBL.text = "1001"
-            cell.priceLBL.text = "123000"
+            cell.nameLBL.text = internationalData?.data[indexPath.row].option2
+            cell.codeLBL.text = internationalData?.data[indexPath.row].type
+            cell.priceLBL.text = internationalData?.data[indexPath.row].option1
             return cell
             
         case buySellCollectionView:
             let cell = buySellCollectionView.dequeueReusableCell(withReuseIdentifier: "Buy&SellCollectionViewCell", for: indexPath) as! Buy_SellCollectionViewCell
-            cell.titleLBL.text = data?.data[indexPath.row].option3
+            cell.titleLBL.text = data?.data[indexPath.row].type
             cell.buyLBL.text = "Buy"
             cell.sellLBL.text = "Sell"
             cell.buyNumberLBL.text = data?.data[indexPath.row].option2
             cell.sellNumberLBL.text = data?.data[indexPath.row].option1
             cell.arrowImageView.image = UIImage(systemName: "arrow.up.forward.app")
+            cell.ratioLBL.text = data?.data[indexPath.row].relative
             return cell
         case buttonCollectionView:
             let cell = buttonCollectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
@@ -110,8 +120,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             return cell
         default:
             let cell = exchangerCollectionView.dequeueReusableCell(withReuseIdentifier: "ExchangersCollectionViewCell", for: indexPath) as! ExchangersCollectionViewCell
-            cell.priceLBL.text = "1700"
-            cell.titleOfiicialLBL.text = "Official Price"
+            cell.fillData(index: indexPath.row)
             return cell
         }
         
@@ -123,21 +132,22 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             fetchData(clientRequest: .getDefault())
             exchangerCollectionView.isHidden = false
             sharePriceBtn.isHidden = false
-//            bottomConstrainFromBuyCollectionView!.isActive = false
+            //            bottomConstrainFromBuyCollectionView!.isActive = false
             bottomConstrainFromBuyCollectionView.constant = 212
             removeAdsBtn.isHidden = false
         case 1:
             fetchData(clientRequest: .getCurriencyPrice())
             exchangerCollectionView.isHidden = true
             sharePriceBtn.isHidden = true
-//            bottomConstrainFromBuyCollectionView!.isActive = true
+            //            bottomConstrainFromBuyCollectionView!.isActive = true
             bottomConstrainFromBuyCollectionView.constant = 24
             removeAdsBtn.isHidden = true
+            
         default:
             fetchData(clientRequest: .getGoldPrice())
             exchangerCollectionView.isHidden = true
             sharePriceBtn.isHidden = true
-//            bottomConstrainFromBuyCollectionView!.isActive = true
+            //            bottomConstrainFromBuyCollectionView!.isActive = true
             bottomConstrainFromBuyCollectionView.constant = 24
             removeAdsBtn.isHidden = true
         }
@@ -184,6 +194,18 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             switch response{
             case .success(let data):
                 self?.data = data
+                
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
+    private func fetchData(){
+        NetworkLayer.shared.getResults(clientRequest: .getInternationalPrice(), decodingModel: CurrencyModel.self) { [weak self] (response) in
+            switch response{
+            case .success(let data):
+                self?.data = data
+                self?.internationalData = data
             case .failure(let error):
                 print(error.localizedDescription)
             }
