@@ -9,6 +9,7 @@ import UIKit
 
 class DollarViewController: UIViewController {
     
+    @IBOutlet weak var bottomConstrainFromBuyCollectionView: NSLayoutConstraint!
     @IBOutlet weak var sharePriceBtn: UIButton!
     @IBOutlet weak var buySellCollectionView: UICollectionView!
     @IBOutlet weak var exchangerCollectionView: UICollectionView!
@@ -17,7 +18,7 @@ class DollarViewController: UIViewController {
     
     @IBOutlet weak var dollarCollectionView: UICollectionView!
     
-    private var data: CurrencyModel?{
+        private var data: CurrencyModel?{
         didSet{
             //print(data)\
             DispatchQueue.main.async {
@@ -121,12 +122,24 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         case 0:
             fetchData(clientRequest: .getDefault())
             exchangerCollectionView.isHidden = false
+            sharePriceBtn.isHidden = false
+//            bottomConstrainFromBuyCollectionView!.isActive = false
+            bottomConstrainFromBuyCollectionView.constant = 212
+            removeAdsBtn.isHidden = false
         case 1:
             fetchData(clientRequest: .getCurriencyPrice())
             exchangerCollectionView.isHidden = true
+            sharePriceBtn.isHidden = true
+//            bottomConstrainFromBuyCollectionView!.isActive = true
+            bottomConstrainFromBuyCollectionView.constant = 24
+            removeAdsBtn.isHidden = true
         default:
             fetchData(clientRequest: .getGoldPrice())
             exchangerCollectionView.isHidden = true
+            sharePriceBtn.isHidden = true
+//            bottomConstrainFromBuyCollectionView!.isActive = true
+            bottomConstrainFromBuyCollectionView.constant = 24
+            removeAdsBtn.isHidden = true
         }
     }
     

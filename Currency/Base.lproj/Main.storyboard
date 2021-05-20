@@ -203,6 +203,7 @@
                                             <constraint firstItem="1pM-IF-ZGI" firstAttribute="leading" secondItem="MPH-by-ZYn" secondAttribute="leading" id="wxY-l6-OZF"/>
                                             <constraint firstItem="Jjg-Q6-GJV" firstAttribute="top" secondItem="36i-jf-LLg" secondAttribute="bottom" constant="16" id="xId-7X-64J"/>
                                             <constraint firstItem="Jjg-Q6-GJV" firstAttribute="leading" secondItem="MPH-by-ZYn" secondAttribute="leading" constant="32" id="yjt-b9-C4R"/>
+                                            <constraint firstAttribute="bottom" secondItem="whj-0s-a6N" secondAttribute="bottom" constant="212" id="z5A-Pw-ACQ"/>
                                             <constraint firstItem="36i-jf-LLg" firstAttribute="top" secondItem="whj-0s-a6N" secondAttribute="bottom" id="zO1-RD-2Q4"/>
                                         </constraints>
                                     </view>
@@ -251,6 +252,7 @@
                     <tabBarItem key="tabBarItem" title="Dollar" image="dollarsign.square" catalog="system" id="v6g-gk-b9T"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
+                        <outlet property="bottomConstrainFromBuyCollectionView" destination="z5A-Pw-ACQ" id="9tn-X8-ZnJ"/>
                         <outlet property="buttonCollectionView" destination="OxV-YD-V15" id="Ouv-Kj-dKt"/>
                         <outlet property="buySellCollectionView" destination="whj-0s-a6N" id="44m-tY-j4w"/>
                         <outlet property="dollarCollectionView" destination="c1V-Ho-yci" id="ggP-zw-UdN"/>
