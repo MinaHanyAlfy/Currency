@@ -20,10 +20,10 @@ class DollarViewController: UIViewController {
     private var data: CurrencyModel?{
         didSet{
             //print(data)\
-            //DispatchQueue.main.async {
-              //  self.buySellCollectionView.reloadData()
-            //}
-       
+            DispatchQueue.main.async {
+                self.buySellCollectionView.reloadData()
+            }
+            
         }
     }
     
@@ -31,7 +31,7 @@ class DollarViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-        fetchData()
+        fetchData(clientRequest: .getDefault())
         // Do any additional setup after loading the view.
         
     }
@@ -100,7 +100,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             cell.buyLBL.text = "Buy"
             cell.sellLBL.text = "Sell"
             cell.buyNumberLBL.text = data?.data[indexPath.row].option2
-            cell.sellNumberLBL.text = data?.data[indexPath.row].option2
+            cell.sellNumberLBL.text = data?.data[indexPath.row].option1
             cell.arrowImageView.image = UIImage(systemName: "arrow.up.forward.app")
             return cell
         case buttonCollectionView:
@@ -115,20 +115,18 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         }
         
     }
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        switch collectionView {
-//        case buttonCollectionView:
-//            switch buttonCollectionView {
-//            case buttonCollectionView.cellForItem(at: indexPath):
-//        
-//            
-//            default:
-//                self.dollarCollectionView.reloadData()
-//            }
-//        default:
-//            self.dollarCollectionView.reloadData()
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard collectionView == buttonCollectionView else {return}
+        switch indexPath.row {
+        case 0:
+            fetchData(clientRequest: .getDefault())
+        case 1:
+            fetchData(clientRequest: .getCurriencyPrice())
+        default:
+            fetchData(clientRequest: .getGoldPrice())
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case dollarCollectionView:
@@ -165,8 +163,8 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     //    }
     // MARK:- Call Api To Get Data
     
-    private func fetchData(){
-        NetworkLayer.shared.getResults(clientRequest: .getDefault(), decodingModel: CurrencyModel.self) { [weak self] (response) in
+    private func fetchData(clientRequest: Curriencies){
+        NetworkLayer.shared.getResults(clientRequest: clientRequest, decodingModel: CurrencyModel.self) { [weak self] (response) in
             switch response{
             case .success(let data):
                 self?.data = data

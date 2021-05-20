@@ -20,7 +20,7 @@ class ButtonCollectionViewCell: UICollectionViewCell {
     
     func fillData(index:Int){
         tabButton.setTitle(buttonArray[index], for: .normal)
-        tabButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
+      //  tabButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
     }
     func setUp()
     {
@@ -28,9 +28,9 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         
       //
     }
-    @objc func actionButton (sender: UIButton!){
-        print("Button tapped")
+    //@objc func actionButton (sender: UIButton!){
+      //  print("Button tapped")
         //refresh View Controller and Disable Exchanger and share price
-    }
+   // }
     
 }
