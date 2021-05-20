@@ -20,19 +20,17 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGe-cc-Vt9">
                         <rect key="frame" x="0.0" y="0.0" width="105" height="50"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bln-Oq-x6g">
-                                <rect key="frame" x="4" y="4" width="97" height="42"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dollar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioX-lw-zvo">
+                                <rect key="frame" x="36.5" y="18" width="32" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="Bln-Oq-x6g" firstAttribute="leading" secondItem="qGe-cc-Vt9" secondAttribute="leading" constant="4" id="2fx-Ij-Ffu"/>
-                            <constraint firstAttribute="trailing" secondItem="Bln-Oq-x6g" secondAttribute="trailing" constant="4" id="En1-hl-RwH"/>
-                            <constraint firstAttribute="bottom" secondItem="Bln-Oq-x6g" secondAttribute="bottom" constant="4" id="UnX-P4-OBH"/>
-                            <constraint firstItem="Bln-Oq-x6g" firstAttribute="top" secondItem="qGe-cc-Vt9" secondAttribute="top" constant="4" id="ahW-EL-Hkl"/>
+                            <constraint firstItem="ioX-lw-zvo" firstAttribute="centerX" secondItem="qGe-cc-Vt9" secondAttribute="centerX" id="EvT-4I-EJh"/>
+                            <constraint firstItem="ioX-lw-zvo" firstAttribute="centerY" secondItem="qGe-cc-Vt9" secondAttribute="centerY" id="K9W-W2-3eo"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -47,7 +45,7 @@
             <size key="customSize" width="105" height="50"/>
             <connections>
                 <outlet property="mainView" destination="qGe-cc-Vt9" id="not-ht-gl6"/>
-                <outlet property="tabButton" destination="Bln-Oq-x6g" id="ZgF-o1-ZIA"/>
+                <outlet property="titleLabel" destination="ioX-lw-zvo" id="Sem-aS-ewE"/>
             </connections>
             <point key="canvasLocation" x="-3008" y="76"/>
         </collectionViewCell>

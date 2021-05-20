@@ -93,7 +93,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MPH-by-ZYn">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="947"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c1V-Ho-yci">
                                                 <rect key="frame" x="0.0" y="64" width="414" height="100"/>
@@ -185,12 +185,12 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Jjg-Q6-GJV" secondAttribute="bottom" constant="24" id="82k-li-30x"/>
                                             <constraint firstItem="whj-0s-a6N" firstAttribute="top" secondItem="1pM-IF-ZGI" secondAttribute="bottom" constant="8" id="AdT-qB-JIP"/>
                                             <constraint firstItem="cph-rl-Vqv" firstAttribute="width" secondItem="36i-jf-LLg" secondAttribute="width" multiplier="0.35" id="Aja-hA-cPI"/>
                                             <constraint firstAttribute="trailing" secondItem="1pM-IF-ZGI" secondAttribute="trailing" id="M49-dS-LPu"/>
                                             <constraint firstAttribute="trailing" secondItem="c1V-Ho-yci" secondAttribute="trailing" id="Opn-Tg-yjH"/>
                                             <constraint firstItem="whj-0s-a6N" firstAttribute="leading" secondItem="1pM-IF-ZGI" secondAttribute="leading" id="Qs8-C2-yE5"/>
-                                            <constraint firstAttribute="height" constant="1500" id="UJI-jl-NRG"/>
                                             <constraint firstItem="cph-rl-Vqv" firstAttribute="top" secondItem="36i-jf-LLg" secondAttribute="bottom" constant="16" id="Z86-uB-Prk"/>
                                             <constraint firstItem="c1V-Ho-yci" firstAttribute="leading" secondItem="MPH-by-ZYn" secondAttribute="leading" id="aMa-GJ-I4q"/>
                                             <constraint firstItem="36i-jf-LLg" firstAttribute="leading" secondItem="whj-0s-a6N" secondAttribute="leading" id="cJL-FU-m1M"/>
@@ -199,6 +199,7 @@
                                             <constraint firstItem="whj-0s-a6N" firstAttribute="trailing" secondItem="1pM-IF-ZGI" secondAttribute="trailing" id="lCI-gw-0uI"/>
                                             <constraint firstItem="1pM-IF-ZGI" firstAttribute="top" secondItem="c1V-Ho-yci" secondAttribute="bottom" constant="8" id="lSb-5k-Xgf"/>
                                             <constraint firstItem="Jjg-Q6-GJV" firstAttribute="width" secondItem="36i-jf-LLg" secondAttribute="width" multiplier="0.35" id="qWr-xl-u6b"/>
+                                            <constraint firstItem="Jjg-Q6-GJV" firstAttribute="top" secondItem="36i-jf-LLg" secondAttribute="bottom" constant="16" id="uA7-Z9-nXa"/>
                                             <constraint firstItem="1pM-IF-ZGI" firstAttribute="leading" secondItem="MPH-by-ZYn" secondAttribute="leading" id="wxY-l6-OZF"/>
                                             <constraint firstItem="Jjg-Q6-GJV" firstAttribute="top" secondItem="36i-jf-LLg" secondAttribute="bottom" constant="16" id="xId-7X-64J"/>
                                             <constraint firstItem="Jjg-Q6-GJV" firstAttribute="leading" secondItem="MPH-by-ZYn" secondAttribute="leading" constant="32" id="yjt-b9-C4R"/>

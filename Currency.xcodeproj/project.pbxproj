@@ -27,8 +27,6 @@
 		CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */; };
 		CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */; };
 		CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */; };
-		CA57C110264FF26900790084 /* LebanonLera.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C10F264FF26900790084 /* LebanonLera.swift */; };
-		CA57C115264FF29D00790084 /* Gold.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C114264FF29D00790084 /* Gold.swift */; };
 		CA57C11A264FF2C100790084 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C119264FF2C100790084 /* Currency.swift */; };
 		CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */; };
 		CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */; };
@@ -90,8 +88,6 @@
 		CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Buy&SellCollectionViewCell.xib"; sourceTree = "<group>"; };
 		CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangersCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangersCollectionViewCell.xib; sourceTree = "<group>"; };
-		CA57C10F264FF26900790084 /* LebanonLera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LebanonLera.swift; sourceTree = "<group>"; };
-		CA57C114264FF29D00790084 /* Gold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gold.swift; sourceTree = "<group>"; };
 		CA57C119264FF2C100790084 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -216,8 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				CA57C119264FF2C100790084 /* Currency.swift */,
-				CA57C114264FF29D00790084 /* Gold.swift */,
-				CA57C10F264FF26900790084 /* LebanonLera.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -514,11 +508,9 @@
 				CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
 				CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */,
-				CA57C110264FF26900790084 /* LebanonLera.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,
 				C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */,
-				CA57C115264FF29D00790084 /* Gold.swift in Sources */,
 				CA57C11A264FF2C100790084 /* Currency.swift in Sources */,
 				CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */,
 				CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */,

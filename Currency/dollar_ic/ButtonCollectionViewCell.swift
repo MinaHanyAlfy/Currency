@@ -10,23 +10,24 @@ import Accessibility
 import MaterialComponents
 class ButtonCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var mainView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-    @IBOutlet weak var tabButton: UIButton!
+ //   @IBOutlet weak var tabButton: UIButton!
     var buttonArray = ["Dollar","Currencies","Gold"]
     
     func fillData(index:Int){
-        tabButton.setTitle(buttonArray[index], for: .normal)
+        titleLabel.text = (buttonArray[index])
       //  tabButton.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
     }
     func setUp()
     {
-        tabButton.backgroundColor = UIColor.systemOrange
+        titleLabel.backgroundColor = UIColor.systemOrange
         
-      //
+      
     }
     //@objc func actionButton (sender: UIButton!){
       //  print("Button tapped")

@@ -120,10 +120,13 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         switch indexPath.row {
         case 0:
             fetchData(clientRequest: .getDefault())
+            exchangerCollectionView.isHidden = false
         case 1:
             fetchData(clientRequest: .getCurriencyPrice())
+            exchangerCollectionView.isHidden = true
         default:
             fetchData(clientRequest: .getGoldPrice())
+            exchangerCollectionView.isHidden = true
         }
     }
     
