@@ -6,19 +6,20 @@
 //
 
 import Foundation
+
 struct Currency : Codable {
-    let id : Int?
-    let option1 : String?
-    let option2 : String?
-    let option3 : String?
-    let last_sell : String?
-    let last_buy : String?
-    let relative : String?
-    let type : String?
-    let country : String?
-    let state : Int?
-    let created_at : String?
-    let updated_at : String?
+    var id : Int?
+    var option1 : String?
+    var option2 : String?
+    var option3 : String?
+    var last_sell : String?
+    var last_buy : String?
+    var relative : String?
+    var type : String?
+    var country : String?
+    var state : Int?
+    var created_at : String?
+    var updated_at : String?
 
     enum CodingKeys: String, CodingKey {
 
@@ -36,3 +37,43 @@ struct Currency : Codable {
         case updated_at = "updated_at"
     }
 }
+
+
+struct CurrencyModel: Codable{
+    var currentPage: Int?
+    var data: [Currency] = []
+    var firstPageURL: String?
+    var from: Int?
+    var lastPage: Int?
+    var lastPageURL: String?
+    var nextPageURL: String?
+    var path: String?
+    var perPage: Int?
+    var pervPageUrl: String?
+    var to: Int?
+    var total: Int?
+    
+    enum CodingKeys: String,CodingKey{
+        case data, from, path, to, total
+        case currentPage = "current_page"
+        case firstPageURL = "first_page_url"
+        case lastPage = "last_page"
+        case lastPageURL = "last_page_url"
+        case nextPageURL = "next_page_url"
+        case perPage = "per_page"
+        case pervPageUrl = "prev_page_url"
+    }
+}
+
+//{
+//   "first_page_url":"https:\/\/win1withus.com\/del\/api\/currency_by_type-4?page=1",
+//   "from":1,
+//   "last_page":1,
+//   "last_page_url":"https:\/\/win1withus.com\/del\/api\/currency_by_type-4?page=1",
+//   "next_page_url":null,
+//   "path":"https:\/\/win1withus.com\/del\/api\/currency_by_type-4",
+//   "per_page":30,
+//   "prev_page_url":null,
+//   "to":2,
+//   "total":2
+//}

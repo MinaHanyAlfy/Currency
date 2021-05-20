@@ -17,11 +17,17 @@ class DollarViewController: UIViewController {
     
     @IBOutlet weak var dollarCollectionView: UICollectionView!
     
+    private var data: CurrencyModel?{
+        didSet{
+            print(data)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-        
+        fetchData()
         // Do any additional setup after loading the view.
         
     }
@@ -32,11 +38,23 @@ class DollarViewController: UIViewController {
         exchangerCollectionView.register(UINib(nibName: "ExchangersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ExchangersCollectionViewCell")
         buttonCollectionView.register(UINib(nibName: "ButtonCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ButtonCollectionViewCell")
     }
-    func setUpUI(){
+    
+    private func setUpUI(){
         sharePriceBtn.layer.cornerRadius = 10
         removeAdsBtn.layer.cornerRadius = 10
         sharePriceBtn.clipsToBounds = true
         removeAdsBtn.clipsToBounds = true
+    }
+    
+    private func fetchData(){
+        NetworkLayer.shared.getResults(clientRequest: .getDefault(), decodingModel: CurrencyModel.self) { [weak self] (response) in
+            switch response{
+            case .success(let data):
+                self?.data = data
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
     
 }
@@ -131,16 +149,17 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     //        }
     //    }
     // MARK:- Call Api To Get Data
-    func callApi(){
-        NetworkLayer.shared.getResults(description: "currency by type ", pageNumber: 4) { result in
-            switch result {
-            case .success(let results):
-                print(results)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
+//    func callApi(){
+//        NetworkLayer.shared.getResults(description: "currency by type ", pageNumber: 4) { result in
+//            switch result {
+//            case .success(let results):
+//                print(results)
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+    
 //    func getData()  {
 //        Network.shared.getDataFromAPI(api: "https://win1withus.com/del/api/currency_by_type-4") { [weak self](data, error) in
 //

@@ -6,11 +6,15 @@
 //
 
 import Foundation
+
 class NetworkLayer {
+    
    static let shared = NetworkLayer()
-    func getResults(description: String,pageNumber:Int, completed: @escaping (Result<[LebanonLera],ErorrMessage> ) -> Void) {
-        let urlString : String = "https://win1withus.com/del/api/\(description.replacingOccurrences(of: " ", with:"_" ))-\(pageNumber)"
-        guard let url = URL(string: urlString) else {return}
+
+    //private func getResults<>(description: String,pageNumber:Int, completed: @escaping (Result<[LebanonLera],ErorrMessage> ) -> Void) {
+     func getResults<M: Codable>(clientRequest: Curriencies,decodingModel: M.Type, completed: @escaping (Result<M,ErorrMessage> ) -> Void) {
+        //let urlString : String = "https://win1withus.com/del/api/\(description.replacingOccurrences(of: " ", with:"_" ))-\(pageNumber)"
+        guard let url = URL(string: clientRequest.baseURL + clientRequest.path) else {return}
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let _ =  error {
                 completed((.failure(.InvalidData)))
@@ -27,7 +31,7 @@ class NetworkLayer {
             {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let results = try decoder.decode([LebanonLera].self, from: data)
+                let results = try decoder.decode(M.self, from: data)
                 completed((.success(results)))
                 
             }catch {
