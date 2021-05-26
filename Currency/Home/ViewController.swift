@@ -61,6 +61,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         case 1:
             let vc =   self.storyboard?.instantiateViewController(withIdentifier: "DollarViewController") as! DollarViewController
             self.navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
+            self.navigationController?.pushViewController(convertVC, animated: true)
         default:
         print("tapped")
         }

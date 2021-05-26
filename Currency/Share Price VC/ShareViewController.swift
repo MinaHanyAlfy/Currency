@@ -11,7 +11,7 @@ class ShareViewController: UIViewController {
     
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
-    
+    var recivedTable = [CurrencyModel].self
     @IBOutlet weak var screenShareCollectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -30,6 +30,12 @@
 		CA57C11A264FF2C100790084 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C119264FF2C100790084 /* Currency.swift */; };
 		CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */; };
 		CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */; };
+		CABBD443265AA71B0089B6F8 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD442265AA71B0089B6F8 /* ConverterViewController.swift */; };
+		CABBD449265AAB8B0089B6F8 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD447265AAB8B0089B6F8 /* ConverterTableViewCell.swift */; };
+		CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABBD448265AAB8B0089B6F8 /* ConverterTableViewCell.xib */; };
+		CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD44E265AABB50089B6F8 /* ConverterCollectionViewCell.swift */; };
+		CABBD451265AABB50089B6F8 /* ConverterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABBD44F265AABB50089B6F8 /* ConverterCollectionViewCell.xib */; };
+		CABE17CE2659B08300F24679 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABE17CD2659B08300F24679 /* StoreKit.framework */; };
 		CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E83261FE9BA00D854FA /* DollarViewController.swift */; };
 		CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */; };
 		CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */; };
@@ -93,6 +99,13 @@
 		CA57C119264FF2C100790084 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		CABBD442265AA71B0089B6F8 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
+		CABBD447265AAB8B0089B6F8 /* ConverterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTableViewCell.swift; sourceTree = "<group>"; };
+		CABBD448265AAB8B0089B6F8 /* ConverterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterTableViewCell.xib; sourceTree = "<group>"; };
+		CABBD44E265AABB50089B6F8 /* ConverterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterCollectionViewCell.swift; sourceTree = "<group>"; };
+		CABBD44F265AABB50089B6F8 /* ConverterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterCollectionViewCell.xib; sourceTree = "<group>"; };
+		CABE17CD2659B08300F24679 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		CABE17CF2659B0C600F24679 /* Currency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Currency.entitlements; sourceTree = "<group>"; };
 		CACC8E83261FE9BA00D854FA /* DollarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarViewController.swift; sourceTree = "<group>"; };
 		CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarCollectionViewCell.swift; sourceTree = "<group>"; };
 		CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DollarCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -110,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F025A9FECFE7E7BE6BDA7E6 /* Pods_Currency.framework in Frameworks */,
+				CABE17CE2659B08300F24679 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,6 +171,8 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				CABBD441265AA6E90089B6F8 /* Converter Vc */,
+				CABE17CF2659B0C600F24679 /* Currency.entitlements */,
 				CADC647126553C95003E0032 /* Custom Cells Swift Fils */,
 				CADC646126552EF4003E0032 /* Share Price VC */,
 				CADC645D26552E69003E0032 /* Custom Cells Nib File */,
@@ -196,6 +212,7 @@
 		2776CD5D7A41A93E7CB1A623 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CABE17CD2659B08300F24679 /* StoreKit.framework */,
 				88FDEE0C8E4FAFBED20ADEFB /* Pods_Currency.framework */,
 				6CA83FE168B72166D6226B0F /* Pods_Currency_CurrencyUITests.framework */,
 				3F4E7AEBF5C0AD3A92F5FCAD /* Pods_CurrencyTests.framework */,
@@ -232,6 +249,18 @@
 				2254D19F2644788E00A2504D /* ViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CABBD441265AA6E90089B6F8 /* Converter Vc */ = {
+			isa = PBXGroup;
+			children = (
+				CABBD442265AA71B0089B6F8 /* ConverterViewController.swift */,
+				CABBD447265AAB8B0089B6F8 /* ConverterTableViewCell.swift */,
+				CABBD448265AAB8B0089B6F8 /* ConverterTableViewCell.xib */,
+				CABBD44E265AABB50089B6F8 /* ConverterCollectionViewCell.swift */,
+				CABBD44F265AABB50089B6F8 /* ConverterCollectionViewCell.xib */,
+			);
+			path = "Converter Vc";
 			sourceTree = "<group>";
 		};
 		CACC8E82261FE8E200D854FA /* dollar_ic */ = {
@@ -393,10 +422,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */,
 				CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */,
 				CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */,
 				CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */,
 				CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */,
+				CABBD451265AABB50089B6F8 /* ConverterCollectionViewCell.xib in Resources */,
 				2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */,
 				CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */,
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
@@ -538,14 +569,17 @@
 				CADC646326552F78003E0032 /* ShareViewController.swift in Sources */,
 				CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
+				CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */,
 				CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */,
 				CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
+				CABBD449265AAB8B0089B6F8 /* ConverterTableViewCell.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,
 				C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */,
 				CA57C11A264FF2C100790084 /* Currency.swift in Sources */,
 				CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */,
 				CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */,
+				CABBD443265AA71B0089B6F8 /* ConverterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +757,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -742,6 +777,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -761,6 +797,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CurrencyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
@@ -783,6 +820,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CurrencyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;

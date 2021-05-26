@@ -8,7 +8,7 @@
 import UIKit
 
 class DollarViewController: UIViewController {
-    
+
     @IBOutlet weak var bottomConstrainFromBuyCollectionView: NSLayoutConstraint!
     @IBOutlet weak var sharePriceBtn: UIButton!
     @IBOutlet weak var buySellCollectionView: UICollectionView!
@@ -17,14 +17,18 @@ class DollarViewController: UIViewController {
     @IBOutlet weak var removeAdsBtn: UIButton!
     
     @IBOutlet weak var dollarCollectionView: UICollectionView!
-    
+  
     private var internationalData: CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
                 self.dollarCollectionView.reloadData()
+              //  var sharedTable : [CurrencyModel] = [data?.data[0] ]
             }
             
         }
+    }
+    @IBAction func sharePriceAction(_ sender: Any) {
+      //  performSegue(withIdentifier: "sharingObject", sender: sharedTable)
     }
     private var data: CurrencyModel?{
         didSet{
@@ -58,6 +62,7 @@ class DollarViewController: UIViewController {
         sharePriceBtn.clipsToBounds = true
         removeAdsBtn.clipsToBounds = true
     }
+    
     
     
 }
@@ -169,7 +174,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         }
     }
     
-    
+    //var sharedTable = [CurrencyModel].self
     //   // func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     //        switch collectionView {
     //        case buttonCollectionView:
@@ -211,5 +216,13 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             }
         }
     }
+    
+    
+    //MARK:- Sending data by Segue
+//    .  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? ShareViewController  {
+//            vc.recivedTable = sender as! [CurrencyModel].Type
+//        }
+//    }
+//    
 }
-

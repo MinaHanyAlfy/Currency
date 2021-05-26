@@ -85,6 +85,90 @@
             </objects>
             <point key="canvasLocation" x="2601" y="-119"/>
         </scene>
+        <!--Converter View Controller-->
+        <scene sceneID="Tgx-Zc-4mI">
+            <objects>
+                <viewController storyboardIdentifier="ConverterViewController" id="cF3-R9-Nrc" customClass="ConverterViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="23S-38-yfX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pun-za-wpb">
+                                <rect key="frame" x="16" y="60" width="382" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="Xfq-kE-8nh"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VSt-af-HGM">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="cF3-R9-Nrc" id="vlR-VX-fyM"/>
+                                    <outlet property="delegate" destination="cF3-R9-Nrc" id="cSD-YV-Msv"/>
+                                </connections>
+                            </collectionView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQk-20-L9F">
+                                <rect key="frame" x="16" y="140" width="382" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="XJA-4o-OQ3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfe-Gw-zQe">
+                                <rect key="frame" x="128" y="252" width="158" height="48"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="8L6-h2-Voi"/>
+                                </constraints>
+                                <state key="normal" title="Convert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dR5-F8-4Xx">
+                                <rect key="frame" x="16" y="324" width="382" height="258"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="258" id="EvR-ZH-s10"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="cF3-R9-Nrc" id="0JG-JR-GVS"/>
+                                    <outlet property="delegate" destination="cF3-R9-Nrc" id="vQN-AK-T3h"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Nst-44-jTB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cfe-Gw-zQe" firstAttribute="top" secondItem="xQk-20-L9F" secondAttribute="bottom" constant="48" id="1dI-X4-ThS"/>
+                            <constraint firstItem="cfe-Gw-zQe" firstAttribute="leading" secondItem="Nst-44-jTB" secondAttribute="leading" constant="128" id="6DM-fi-Lbs"/>
+                            <constraint firstItem="dR5-F8-4Xx" firstAttribute="top" secondItem="cfe-Gw-zQe" secondAttribute="bottom" constant="24" id="E4C-Yg-vYt"/>
+                            <constraint firstItem="Nst-44-jTB" firstAttribute="trailing" secondItem="xQk-20-L9F" secondAttribute="trailing" constant="16" id="Gpf-xD-ihL"/>
+                            <constraint firstItem="Nst-44-jTB" firstAttribute="trailing" secondItem="cfe-Gw-zQe" secondAttribute="trailing" constant="128" id="Jjd-7B-hmo"/>
+                            <constraint firstItem="pun-za-wpb" firstAttribute="leading" secondItem="Nst-44-jTB" secondAttribute="leading" constant="16" id="OHV-cG-f3A"/>
+                            <constraint firstItem="Nst-44-jTB" firstAttribute="trailing" secondItem="dR5-F8-4Xx" secondAttribute="trailing" constant="16" id="Vd2-0z-mET"/>
+                            <constraint firstItem="pun-za-wpb" firstAttribute="top" secondItem="Nst-44-jTB" secondAttribute="top" constant="16" id="bvh-jc-VNj"/>
+                            <constraint firstItem="xQk-20-L9F" firstAttribute="top" secondItem="pun-za-wpb" secondAttribute="bottom" constant="16" id="jsy-EM-BM1"/>
+                            <constraint firstItem="dR5-F8-4Xx" firstAttribute="leading" secondItem="Nst-44-jTB" secondAttribute="leading" constant="16" id="kFe-yz-NDT"/>
+                            <constraint firstItem="xQk-20-L9F" firstAttribute="leading" secondItem="Nst-44-jTB" secondAttribute="leading" constant="16" id="r39-es-wDH"/>
+                            <constraint firstItem="Nst-44-jTB" firstAttribute="trailing" secondItem="pun-za-wpb" secondAttribute="trailing" constant="16" id="t0X-oj-uHr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="convertBtn" destination="cfe-Gw-zQe" id="TPf-kz-EQG"/>
+                        <outlet property="convertsTableView" destination="dR5-F8-4Xx" id="YVF-8l-637"/>
+                        <outlet property="currenciesCollectionView" destination="pun-za-wpb" id="1mr-8Z-hwh"/>
+                        <outlet property="valueTF" destination="xQk-20-L9F" id="uMg-gS-Mwk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m6w-zX-TNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4016" y="619"/>
+        </scene>
         <!--Dollar-->
         <scene sceneID="8ik-LV-58g">
             <objects>
@@ -170,7 +254,8 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="Day-oB-5HF" kind="show" id="BEc-JO-1Al"/>
+                                                    <action selector="sharePriceAction:" destination="EIP-WC-2ff" eventType="touchUpInside" id="O9h-xg-DCg"/>
+                                                    <segue destination="Day-oB-5HF" kind="show" identifier="sharingObject" id="BEc-JO-1Al"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cph-rl-Vqv">
@@ -357,38 +442,6 @@
             </objects>
             <point key="canvasLocation" x="5040.579710144928" y="-901.33928571428567"/>
         </scene>
-        <!--Currencies-->
-        <scene sceneID="1mG-jF-dWu">
-            <objects>
-                <viewController id="toh-rw-z5F" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ups-LH-jtg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aeh-Ri-znE"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Currencies" image="coloncurrencysign.square" catalog="system" id="ZGf-dO-dJo"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="12Q-u9-xqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4258" y="747"/>
-        </scene>
-        <!--Gold-->
-        <scene sceneID="sjb-UK-I8i">
-            <objects>
-                <viewController id="1sm-dJ-FO0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0qT-cQ-FO5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="9e0-Jq-g8v"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Gold" image="suit.diamond" catalog="system" id="saw-AF-rAd"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ETh-sh-qZV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3361" y="1348"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="20O-g9-XXo">
             <objects>
@@ -411,10 +464,8 @@
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
-        <image name="coloncurrencysign.square" catalog="system" width="128" height="114"/>
         <image name="dollar_icon" width="256" height="256"/>
         <image name="dollarsign.square" catalog="system" width="128" height="114"/>
-        <image name="suit.diamond" catalog="system" width="107" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

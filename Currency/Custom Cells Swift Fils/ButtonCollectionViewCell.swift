@@ -35,10 +35,13 @@ class ButtonCollectionViewCell: UICollectionViewCell {
         titleLabel.layer.masksToBounds = true
         titleLabel.textColor = UIColor.white
         titleLabel.backgroundColor = UIColor.systemOrange
+        // if titleLabel.isFocused {
+        //   titleLabel.isHighlighted = true
+        //}
+        titleLabel.alpha = 0.5
         if titleLabel.isFocused {
-            titleLabel.isHighlighted = true
+            titleLabel.alpha = 1
         }
-        
     }
     //@objc func actionButton (sender: UIButton!){
     //  print("Button tapped")
