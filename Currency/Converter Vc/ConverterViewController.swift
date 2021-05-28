@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import CoreData
+import Foundation
+
+
+
 
 class ConverterViewController: UIViewController {
     
@@ -17,9 +22,7 @@ class ConverterViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-        // Do any additional setup after loading the view.
     }
-    
     private func registerCells(){
         currenciesCollectionView.register(UINib(nibName: "ConverterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ConverterCollectionViewCell")
         convertsTableView.register(UINib(nibName: "ConverterTableViewCell", bundle: nil), forCellReuseIdentifier: "ConverterTableViewCell")
@@ -35,8 +38,78 @@ class ConverterViewController: UIViewController {
         valueTF.layer.borderColor = UIColor.systemGray6.cgColor
         convertsTableView.layer.borderWidth = 2
         convertsTableView.layer.borderColor = UIColor.white.cgColor
-       
+        
     }
+    private(set) var storedCurrencies = [CurrencyCD]()
+    
+    
+    //MARK:- Core Data Methods
+    
+    private func getDataFromStorage(){
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+            let managedContext = appDelegate.persistentContainer.viewContext
+            let fetchRequest : NSFetchRequest<CurrencyCD> = CurrencyCD.fetchRequest()
+            do{
+                storedCurrencies = try managedContext.fetch(fetchRequest)
+            }catch let error as NSError{
+                print(error)
+            }
+        }
+    }
+    //Add
+//    func addCurrencyToStorage(_ currency: Currency){
+//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+//            let managedContext = appDelegate.persistentContainer.viewContext
+//            
+//            if currency.type != nil,!(isCurrencyFound(with: currency.id) ?? true){
+//                let newCurrency = CurrencyCD(context: managedContext)
+//                newCurrency.title = currency.relative
+//                newCurrency.value = currency.last_sell
+//                
+//                storedCurrencies += [newCurrency]
+//                
+//                do{
+//                    try managedContext.save()
+//                    print("<<<<< SAVED")
+//                }catch let error as NSError{
+//                    print(error)
+//                }
+//            }
+//        }
+//    }
+//    
+    
+    //Delete
+    func deleteFromStorage(at index:Int ){
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
+            let managedContext = appDelegate.persistentContainer.viewContext
+            managedContext.delete(storedCurrencies[index])
+            storedCurrencies.remove(at: index)
+            do{
+                try managedContext.save();
+                print("item Deleted")
+            }catch let error as NSError{
+                print(error);
+            }
+        }
+    }
+    //
+    
+    private func isCurrencyFound(with currencyID : Int?)->Bool?{
+        guard let id = currencyID else{
+            return nil
+        }
+        if storedCurrencies.count == 0{
+            ()
+        }
+        for curr in storedCurrencies{
+            if(curr.id == id){
+                return true
+            }
+        }
+        return false
+    }
+    
     
 }
 
@@ -58,9 +131,30 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
         cell.fillData(index: indexPath.row)
         return cell
     }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        if let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
+        {
+            cell.currencyLBL.backgroundColor = .orange
+            cell.currencyLBL.textColor = .white
+        }
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.item
+        print(index)
+    }
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        if let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
+        {
+            cell.currencyLBL.backgroundColor = .white
+            
+            cell.currencyLBL.textColor = .black
+            
+        }
+    }
     
- 
- 
+    
+    
     
     
 }
@@ -101,3 +195,4 @@ extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
     
     
 }
+

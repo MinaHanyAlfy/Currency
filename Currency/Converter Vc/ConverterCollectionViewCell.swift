@@ -13,7 +13,7 @@ class ConverterCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         setUpUi()
-        //let whiteView = 
+        
     }
     let arr : [String] = ["REL","EURO","TRY","LebanonLira","Dollar"]
     @IBOutlet weak var currencyLBL: UILabel!
@@ -25,6 +25,7 @@ class ConverterCollectionViewCell: UICollectionViewCell {
         currencyLBL.backgroundColor = UIColor.white
         currencyLBL.textColor = UIColor.black
         mainView.layer.cornerRadius = 10
+    
     }
     func fillData(index:Int){
         currencyLBL.text = arr[index]
