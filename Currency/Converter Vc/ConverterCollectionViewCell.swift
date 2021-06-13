@@ -25,22 +25,23 @@ class ConverterCollectionViewCell: UICollectionViewCell {
         currencyLBL.backgroundColor = UIColor.white
         currencyLBL.textColor = UIColor.black
         mainView.layer.cornerRadius = 10
-    
-    }
-    func fillData(index:Int){
-        currencyLBL.text = arr[index]
         
     }
-    func selected() {
-        currencyLBL.textColor = UIColor.white
-        currencyLBL.backgroundColor = UIColor.orange
+    func color(){
+        currencyLBL.backgroundColor = .systemOrange
+        mainView.tintColor = .white
+        currencyLBL.textColor = .white
         mainView.layer.borderWidth = 0
     }
-    func
-    unSelected() {
+    func unColor(){
         currencyLBL.textColor = UIColor.black
         currencyLBL.backgroundColor = UIColor.white
         mainView.layer.borderWidth = 1
         mainView.layer.borderColor = UIColor.systemBlue.cgColor
     }
+    func fillData(index:Int){
+        currencyLBL.text = arr[index]
+        
+    }
+    
 }

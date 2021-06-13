@@ -14,6 +14,14 @@ import Foundation
 
 class ConverterViewController: UIViewController {
     
+    private var data: CurrencyModel?{
+        didSet{
+            DispatchQueue.main.async {
+                self.convertsTableView.reloadData()
+            }
+            
+        }
+    }
     @IBOutlet weak var currenciesCollectionView: UICollectionView!
     @IBOutlet weak var convertsTableView: UITableView!
     @IBOutlet weak var valueTF: UITextField!
@@ -22,6 +30,7 @@ class ConverterViewController: UIViewController {
         super.viewDidLoad()
         registerCells()
         setUpUI()
+        fetchData()
     }
     private func registerCells(){
         currenciesCollectionView.register(UINib(nibName: "ConverterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ConverterCollectionViewCell")
@@ -41,6 +50,26 @@ class ConverterViewController: UIViewController {
         
     }
     private(set) var storedCurrencies = [CurrencyCD]()
+    
+    @IBAction func convertActionbtn(_ sender: Any) {
+        if (valueTF.text != nil){
+        
+        self.convertsTableView.reloadData()
+        }
+        
+    }
+    
+    //MARK:- API Call When Connected
+    private func fetchData(){
+        NetworkLayer.shared.getResults(clientRequest: .getCurriencyPrice(), decodingModel: CurrencyModel.self) { [weak self] (response) in
+            switch response{
+            case .success(let data):
+                self?.data = data
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     
     //MARK:- Core Data Methods
@@ -119,9 +148,7 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
-    //    }
+  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: currenciesCollectionView.frame.width/3, height: currenciesCollectionView.frame.height - 16)
         
@@ -131,44 +158,45 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
         cell.fillData(index: indexPath.row)
         return cell
     }
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        if let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
-        {
-            cell.currencyLBL.backgroundColor = .orange
-            cell.currencyLBL.textColor = .white
-        }
-        
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let index = indexPath.item
-        print(index)
-    }
-    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-        if let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
-        {
-            cell.currencyLBL.backgroundColor = .white
-            
-            cell.currencyLBL.textColor = .black
-            
-        }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+         let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
+        cell?.color()
+        collectionView.deselectItem(at: indexPath, animated: true)
+           
     }
     
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
+        cell!.unColor()
+    }
     
-    
-    
+
     
 }
 //MARK:- TableView Delegate , TableView DataSource
 extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return data?.data.count ?? 0
     }
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConverterTableViewCell", for: indexPath) as! ConverterTableViewCell
-        cell.fillData(index: indexPath.row)
+        
+        if( valueTF.text != "0"){
+//            let value = Double(valueTF.text!)
+//            let secValue = Double(data?.data[indexPath.row].option2 ?? "0.0")
+//            print(data?.data[indexPath.row].option2)
+//            print(secValue)
+//            cell.priceLBL.text = String(value! * secValue!)
+        }else{
+            
+            
+            cell.priceLBL.text = "0"
+            cell.titleLBL.text = "0"
+        }
         return cell
     }
     
@@ -192,7 +220,7 @@ extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
     
-    
-    
+   
+  
 }
 

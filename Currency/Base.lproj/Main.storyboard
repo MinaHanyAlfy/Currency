@@ -111,7 +111,7 @@
                                     <outlet property="delegate" destination="cF3-R9-Nrc" id="cSD-YV-Msv"/>
                                 </connections>
                             </collectionView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQk-20-L9F">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="Value" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xQk-20-L9F">
                                 <rect key="frame" x="16" y="140" width="382" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="XJA-4o-OQ3"/>
@@ -128,6 +128,9 @@
                                 <state key="normal" title="Convert">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="convertActionbtn:" destination="cF3-R9-Nrc" eventType="touchUpInside" id="Efh-42-9PM"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dR5-F8-4Xx">
                                 <rect key="frame" x="16" y="324" width="382" height="258"/>
@@ -255,7 +258,6 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="sharePriceAction:" destination="EIP-WC-2ff" eventType="touchUpInside" id="O9h-xg-DCg"/>
-                                                    <segue destination="Day-oB-5HF" kind="show" identifier="sharingObject" id="BEc-JO-1Al"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cph-rl-Vqv">
@@ -354,13 +356,47 @@
         <!--Share View Controller-->
         <scene sceneID="R4h-Hj-Nef">
             <objects>
-                <viewController id="Day-oB-5HF" customClass="ShareViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShareViewController" id="Day-oB-5HF" customClass="ShareViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rnm-3u-C3Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9u-ba-itL">
-                                <rect key="frame" x="0.0" y="720" width="414" height="88"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sl6-TF-5x5">
+                                <rect key="frame" x="32" y="76" width="350" height="666"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Oj-u9-EmX">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="618"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="Day-oB-5HF" id="0Je-qB-EcY"/>
+                                            <outlet property="delegate" destination="Day-oB-5HF" id="Mbo-mo-PeI"/>
+                                        </connections>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="من تطبيق اسعار العملات في لبنان" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfn-NJ-Hkn">
+                                        <rect key="frame" x="0.0" y="618" width="350" height="48"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="1" green="1" blue="0.83561643839999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="idj-s6-oH6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="sfn-NJ-Hkn" secondAttribute="bottom" id="5vr-Rn-GwV"/>
+                                    <constraint firstItem="5Oj-u9-EmX" firstAttribute="top" secondItem="sl6-TF-5x5" secondAttribute="top" id="Cbd-gp-eLu"/>
+                                    <constraint firstItem="sfn-NJ-Hkn" firstAttribute="trailing" secondItem="5Oj-u9-EmX" secondAttribute="trailing" id="Cm2-Va-fcq"/>
+                                    <constraint firstItem="sfn-NJ-Hkn" firstAttribute="top" secondItem="5Oj-u9-EmX" secondAttribute="bottom" id="TOR-i4-YNp"/>
+                                    <constraint firstItem="sfn-NJ-Hkn" firstAttribute="leading" secondItem="5Oj-u9-EmX" secondAttribute="leading" id="V1g-jD-1Lb"/>
+                                    <constraint firstItem="5Oj-u9-EmX" firstAttribute="leading" secondItem="sl6-TF-5x5" secondAttribute="leading" id="inE-5o-FkN"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Oj-u9-EmX" secondAttribute="trailing" id="y6d-BS-KiY"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x9u-ba-itL" userLabel="buttons">
+                                <rect key="frame" x="0.0" y="774" width="414" height="88"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ADM-Rk-yy3">
                                         <rect key="frame" x="64" y="24" width="124" height="48"/>
@@ -396,37 +432,17 @@
                                     <constraint firstAttribute="height" constant="88" id="qut-md-5K0"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="del-o0-M8E">
-                                <rect key="frame" x="32" y="64" width="350" height="640"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aSp-Lr-h6t">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <view key="backgroundView" contentMode="scaleToFill" id="VfY-hT-Lq6">
-                                    <rect key="frame" x="0.0" y="0.0" width="350" height="640"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                </view>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="Day-oB-5HF" id="D6S-GO-YzK"/>
-                                    <outlet property="delegate" destination="Day-oB-5HF" id="D1i-ic-Ot8"/>
-                                </connections>
-                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3Tf-sb-hcf"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="3Tf-sb-hcf" firstAttribute="trailing" secondItem="del-o0-M8E" secondAttribute="trailing" constant="32" id="09H-kf-RJ5"/>
                             <constraint firstItem="3Tf-sb-hcf" firstAttribute="trailing" secondItem="x9u-ba-itL" secondAttribute="trailing" id="0mu-cp-Jwl"/>
-                            <constraint firstItem="x9u-ba-itL" firstAttribute="top" secondItem="del-o0-M8E" secondAttribute="bottom" constant="16" id="IrD-vU-8bY"/>
+                            <constraint firstItem="sl6-TF-5x5" firstAttribute="top" secondItem="3Tf-sb-hcf" secondAttribute="top" constant="32" id="DVe-ln-niW"/>
+                            <constraint firstItem="3Tf-sb-hcf" firstAttribute="trailing" secondItem="sl6-TF-5x5" secondAttribute="trailing" constant="32" id="ETt-nB-2Nr"/>
                             <constraint firstItem="3Tf-sb-hcf" firstAttribute="bottom" secondItem="x9u-ba-itL" secondAttribute="bottom" id="Pmi-bp-JYK"/>
-                            <constraint firstItem="del-o0-M8E" firstAttribute="leading" secondItem="3Tf-sb-hcf" secondAttribute="leading" constant="32" id="UgW-qI-3SU"/>
                             <constraint firstItem="x9u-ba-itL" firstAttribute="leading" secondItem="3Tf-sb-hcf" secondAttribute="leading" id="p7z-iw-S21"/>
-                            <constraint firstItem="del-o0-M8E" firstAttribute="top" secondItem="3Tf-sb-hcf" secondAttribute="top" constant="64" id="qEp-aj-QqY"/>
+                            <constraint firstItem="x9u-ba-itL" firstAttribute="top" secondItem="sl6-TF-5x5" secondAttribute="bottom" constant="32" id="u5I-O0-8Hh"/>
+                            <constraint firstItem="sl6-TF-5x5" firstAttribute="leading" secondItem="3Tf-sb-hcf" secondAttribute="leading" constant="32" id="yAK-1n-cyQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nct-6d-hAR">
@@ -434,8 +450,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="closeBtn" destination="ADM-Rk-yy3" id="ERS-qP-jk3"/>
-                        <outlet property="screenShareCollectionView" destination="del-o0-M8E" id="LFl-cG-3N5"/>
+                        <outlet property="screenShareTableView" destination="5Oj-u9-EmX" id="USp-ol-wZW"/>
                         <outlet property="shareBtn" destination="OeO-wr-Q8F" id="oWa-HI-JZB"/>
+                        <outlet property="viewToShare" destination="sl6-TF-5x5" id="K9R-13-AM4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZZ-V4-Zil" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -466,6 +483,9 @@
     <resources>
         <image name="dollar_icon" width="256" height="256"/>
         <image name="dollarsign.square" catalog="system" width="128" height="114"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

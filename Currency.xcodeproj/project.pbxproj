@@ -31,12 +31,17 @@
 		CA57C11A264FF2C100790084 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C119264FF2C100790084 /* Currency.swift */; };
 		CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */; };
 		CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */; };
+		CAA1E2F126679662001857BD /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1E2EF26679662001857BD /* DateTableViewCell.swift */; };
+		CAA1E2F226679662001857BD /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1E2F026679662001857BD /* DateTableViewCell.xib */; };
+		CAA1E2F826679ACD001857BD /* ExchangerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1E2F626679ACD001857BD /* ExchangerTableViewCell.swift */; };
+		CAA1E2F926679ACD001857BD /* ExchangerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1E2F726679ACD001857BD /* ExchangerTableViewCell.xib */; };
+		CAA1E2FF2667A380001857BD /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1E2FD2667A380001857BD /* CurrencyTableViewCell.swift */; };
+		CAA1E3002667A380001857BD /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1E2FE2667A380001857BD /* CurrencyTableViewCell.xib */; };
 		CABBD443265AA71B0089B6F8 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD442265AA71B0089B6F8 /* ConverterViewController.swift */; };
 		CABBD449265AAB8B0089B6F8 /* ConverterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD447265AAB8B0089B6F8 /* ConverterTableViewCell.swift */; };
 		CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABBD448265AAB8B0089B6F8 /* ConverterTableViewCell.xib */; };
 		CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABBD44E265AABB50089B6F8 /* ConverterCollectionViewCell.swift */; };
 		CABBD451265AABB50089B6F8 /* ConverterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CABBD44F265AABB50089B6F8 /* ConverterCollectionViewCell.xib */; };
-		CABE17CE2659B08300F24679 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CABE17CD2659B08300F24679 /* StoreKit.framework */; };
 		CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E83261FE9BA00D854FA /* DollarViewController.swift */; };
 		CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */; };
 		CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */; };
@@ -45,7 +50,22 @@
 		CADC646326552F78003E0032 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646226552F78003E0032 /* ShareViewController.swift */; };
 		CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */; };
 		CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */; };
+		CAEEE28526750040003F2457 /* Charts.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = CAEEE28426750040003F2457 /* Charts.xcworkspace */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		CA3E060D26712023003AFEF1 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		2254D1B22644788F00A2504D /* PBXContainerItemProxy */ = {
@@ -93,6 +113,8 @@
 		BB40D935F66988B736581ADE /* Pods-Currency-CurrencyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency-CurrencyUITests.release.xcconfig"; path = "Target Support Files/Pods-Currency-CurrencyUITests/Pods-Currency-CurrencyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C55EE6B92655D710009A9E9B /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C55EE6CC2655D915009A9E9B /* Curriencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curriencies.swift; sourceTree = "<group>"; };
+		CA3E061126712048003AFEF1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		CA3E061526712048003AFEF1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buy&SellCollectionViewCell.swift"; sourceTree = "<group>"; };
 		CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Buy&SellCollectionViewCell.xib"; sourceTree = "<group>"; };
 		CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangersCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,12 +123,17 @@
 		CA57C119264FF2C100790084 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		CAA1E2EF26679662001857BD /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
+		CAA1E2F026679662001857BD /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
+		CAA1E2F626679ACD001857BD /* ExchangerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangerTableViewCell.swift; sourceTree = "<group>"; };
+		CAA1E2F726679ACD001857BD /* ExchangerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangerTableViewCell.xib; sourceTree = "<group>"; };
+		CAA1E2FD2667A380001857BD /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
+		CAA1E2FE2667A380001857BD /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
 		CABBD442265AA71B0089B6F8 /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		CABBD447265AAB8B0089B6F8 /* ConverterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTableViewCell.swift; sourceTree = "<group>"; };
 		CABBD448265AAB8B0089B6F8 /* ConverterTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterTableViewCell.xib; sourceTree = "<group>"; };
 		CABBD44E265AABB50089B6F8 /* ConverterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterCollectionViewCell.swift; sourceTree = "<group>"; };
 		CABBD44F265AABB50089B6F8 /* ConverterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterCollectionViewCell.xib; sourceTree = "<group>"; };
-		CABE17CD2659B08300F24679 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		CABE17CF2659B0C600F24679 /* Currency.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Currency.entitlements; sourceTree = "<group>"; };
 		CACC8E83261FE9BA00D854FA /* DollarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarViewController.swift; sourceTree = "<group>"; };
 		CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +143,7 @@
 		CADC646226552F78003E0032 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBLCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LBLCustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		CAEEE28426750040003F2457 /* Charts.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = Charts.xcworkspace; path = "../Charts-master/Charts.xcworkspace"; sourceTree = "<group>"; };
 		FE50D18BC7E918A879D4D238 /* Pods-Currency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency.release.xcconfig"; path = "Target Support Files/Pods-Currency/Pods-Currency.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,7 +153,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F025A9FECFE7E7BE6BDA7E6 /* Pods_Currency.framework in Frameworks */,
-				CABE17CE2659B08300F24679 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +178,7 @@
 		2254D18F2644788E00A2504D = {
 			isa = PBXGroup;
 			children = (
+				CAEEE28426750040003F2457 /* Charts.xcworkspace */,
 				2254D19A2644788E00A2504D /* Currency */,
 				2254D1B42644788F00A2504D /* CurrencyTests */,
 				2254D1BF2644788F00A2504D /* CurrencyUITests */,
@@ -183,9 +211,9 @@
 				CADC643626546E69003E0032 /* Utilities */,
 				CACC8E82261FE8E200D854FA /* dollar_ic */,
 				2254D19B2644788E00A2504D /* AppDelegate.swift */,
+				2254D1A72644788F00A2504D /* Assets.xcassets */,
 				2254D19D2644788E00A2504D /* SceneDelegate.swift */,
 				2254D1A12644788E00A2504D /* Main.storyboard */,
-				2254D1A72644788F00A2504D /* Assets.xcassets */,
 				2254D1A92644788F00A2504D /* LaunchScreen.storyboard */,
 				2254D1AC2644788F00A2504D /* Info.plist */,
 				2254D1A42644788E00A2504D /* Currency.xcdatamodeld */,
@@ -215,7 +243,6 @@
 		2776CD5D7A41A93E7CB1A623 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CABE17CD2659B08300F24679 /* StoreKit.framework */,
 				88FDEE0C8E4FAFBED20ADEFB /* Pods_Currency.framework */,
 				6CA83FE168B72166D6226B0F /* Pods_Currency_CurrencyUITests.framework */,
 				3F4E7AEBF5C0AD3A92F5FCAD /* Pods_CurrencyTests.framework */,
@@ -301,6 +328,12 @@
 			isa = PBXGroup;
 			children = (
 				CADC646226552F78003E0032 /* ShareViewController.swift */,
+				CAA1E2EF26679662001857BD /* DateTableViewCell.swift */,
+				CAA1E2F026679662001857BD /* DateTableViewCell.xib */,
+				CAA1E2F626679ACD001857BD /* ExchangerTableViewCell.swift */,
+				CAA1E2F726679ACD001857BD /* ExchangerTableViewCell.xib */,
+				CAA1E2FD2667A380001857BD /* CurrencyTableViewCell.swift */,
+				CAA1E2FE2667A380001857BD /* CurrencyTableViewCell.xib */,
 			);
 			path = "Share Price VC";
 			sourceTree = "<group>";
@@ -331,6 +364,7 @@
 				C00B57D5C9B4DE8164E93C9E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
+				CA3E060D26712023003AFEF1 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -384,6 +418,9 @@
 		2254D1902644788E00A2504D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1230;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
@@ -407,6 +444,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 2254D18F2644788E00A2504D;
 			productRefGroup = 2254D1992644788E00A2504D /* Products */;
@@ -425,6 +463,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAA1E3002667A380001857BD /* CurrencyTableViewCell.xib in Resources */,
 				CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */,
 				CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */,
 				CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */,
@@ -432,8 +471,11 @@
 				CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */,
 				CABBD451265AABB50089B6F8 /* ConverterCollectionViewCell.xib in Resources */,
 				2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */,
+				CAA1E2F226679662001857BD /* DateTableViewCell.xib in Resources */,
 				CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */,
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
+				CAA1E2F926679ACD001857BD /* ExchangerTableViewCell.xib in Resources */,
+				CAEEE28526750040003F2457 /* Charts.xcworkspace in Resources */,
 				2254D1A32644788E00A2504D /* Main.storyboard in Resources */,
 				2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */,
 			);
@@ -567,13 +609,16 @@
 				CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */,
 				2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */,
 				CA4D582426615317004B8063 /* CoreDataLayer.swift in Sources */,
+				CAA1E2FF2667A380001857BD /* CurrencyTableViewCell.swift in Sources */,
 				CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */,
 				CADC643D26547023003E0032 /* NetworkLayer.swift in Sources */,
 				2254D1A62644788E00A2504D /* Currency.xcdatamodeld in Sources */,
 				CADC646326552F78003E0032 /* ShareViewController.swift in Sources */,
 				CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */,
+				CAA1E2F126679662001857BD /* DateTableViewCell.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
 				CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */,
+				CAA1E2F826679ACD001857BD /* ExchangerTableViewCell.swift in Sources */,
 				CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */,
 				CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
@@ -624,6 +669,7 @@
 			children = (
 				2254D1A22644788E00A2504D /* Base */,
 				2254D1E326447C2B00A2504D /* en */,
+				CA3E061126712048003AFEF1 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -632,6 +678,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				2254D1AA2644788F00A2504D /* Base */,
+				CA3E061526712048003AFEF1 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -643,6 +690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -704,6 +752,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -763,6 +812,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52D893D967;
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -783,6 +833,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 52D893D967;
 				INFOPLIST_FILE = Currency/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

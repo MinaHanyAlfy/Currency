@@ -9,6 +9,7 @@ target 'Currency' do
 pod 'MaterialComponents/Buttons'
 pod 'Alamofire' 
 pod 'SDWebImage'
+pod 'ReachabilitySwift'
   target 'CurrencyTests' do
     inherit! :search_paths
     # Pods for testing

@@ -11,7 +11,11 @@ class LBLCustomCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+   let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm E,d MMM y"
+        let today = Date()
+        dateImageView.text = formatter.string(from: today)
+        
     }
 
     @IBOutlet weak var dateImageView: UILabel!

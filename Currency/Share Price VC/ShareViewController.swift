@@ -11,8 +11,7 @@ class ShareViewController: UIViewController {
     
     @IBOutlet weak var closeBtn: UIButton!
     @IBOutlet weak var shareBtn: UIButton!
-    var recivedTable = [CurrencyModel].self
-    @IBOutlet weak var screenShareCollectionView: UICollectionView!
+    var recivedData = Currency()
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
@@ -21,10 +20,11 @@ class ShareViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var viewToShare: UIView!
     var data : CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
-                self.screenShareCollectionView.reloadData()
+                self.screenShareTableView.reloadData()
             }
         }
     }
@@ -35,23 +35,36 @@ class ShareViewController: UIViewController {
         shareBtn.clipsToBounds = true
     }
     @IBAction func closeActionBtn(_ sender: Any) {
-        //dismiss(animated: true, completion: nil)
+
+        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
+    @IBOutlet weak var screenShareTableView: UITableView!
     
     @IBAction func shareActionBtn(_ sender: Any) {
-        let activityViewController = UIActivityViewController(activityItems: screenShareCollectionView.visibleCells, applicationActivities: nil)
-        activityViewController.popoverPresentationController?.sourceView = self.view
-        activityViewController.excludedActivityTypes = [UIActivity.ActivityType.postToFacebook,UIActivity.ActivityType.postToTwitter,UIActivity.ActivityType.saveToCameraRoll,UIActivity.ActivityType.mail,UIActivity.ActivityType.airDrop]
-        self.present(activityViewController, animated: true, completion: nil)
+//
+//        let items = ["This Screen from Lebanon doller application",screenShareTableView.contentSize] as [Any]
+//        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+//
+//        present(ac, animated: true, completion: nil)
+        let text = "This screen for Application Lebanon Dollar"
+            //let image = UIImage(named: "")
+            //let myWebsite = NSURL(string:"")
+            //let shareAll= [text , image! , myWebsite]
+//////////            let activityViewController = UIActivityViewController(activityItems: text, applicationActivities: nil)
+//////            activityViewController.popoverPresentationController?.sourceView = self.view
+////////            self.present(activityViewController, animated: true, completion: nil)
+        
+  
     }
     
     // MARK: - Register Cells
     
     private func registerCells(){
-        screenShareCollectionView.register(UINib(nibName: "Buy&SellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Buy&SellCollectionViewCell")
+        screenShareTableView.register(UINib(nibName: "DateTableViewCell", bundle: nil), forCellReuseIdentifier: "DateTableViewCell")
+        screenShareTableView.register(UINib(nibName: "CurrencyTableViewCell", bundle: nil), forCellReuseIdentifier: "CurrencyTableViewCell")
+        screenShareTableView.register(UINib(nibName: "ExchangerTableViewCell", bundle: nil), forCellReuseIdentifier: "ExchangerTableViewCell")
         
-        screenShareCollectionView.register(UINib(nibName: "ExchangersCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ExchangersCollectionViewCell")
-        screenShareCollectionView.register(UINib(nibName: "LBLCustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LBLCustomCollectionViewCell")
         
     }
     //MARK :- FetchData
@@ -68,64 +81,28 @@ class ShareViewController: UIViewController {
     }
     
 }
-//MARK:- CollectionViewDelegate , CollectionViewDataSource , CollectionViewDelegateFlowLayout
-extension ShareViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //  switch section.tag {
-        //case <#pattern#>:
-        //  <#code#>
-        // default:
-        //<#code#>
-        return 1
-        //}
+//MARK:- TableViewDelegate , TableViewDataSource ,
+extension ShareViewController : UITableViewDelegate,UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
     }
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 4
-        
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(screenShareTableView.frame.height / 3 )
     }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    ////        switch cell {
-    ////        case <#pattern#>:
-    ////            <#code#>
-    ////        default:
-    ////            <#code#>
-    ////        }
-    //    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
-            let cell = screenShareCollectionView.dequeueReusableCell(withReuseIdentifier: "LBLCustomCollectionViewCell", for: indexPath) as! LBLCustomCollectionViewCell
-            cell.dateImageView.text = "Date Now"
+            let cell = screenShareTableView.dequeueReusableCell(withIdentifier: "DateTableViewCell", for: indexPath) as! DateTableViewCell
+
             return cell
-            
         case 1:
-            let buyCell = screenShareCollectionView.dequeueReusableCell(withReuseIdentifier: "Buy&SellCollectionViewCell", for: indexPath) as! Buy_SellCollectionViewCell
-            buyCell.titleLBL.text = data?.data[indexPath.row].type
-            buyCell.buyLBL.text = "Buy"
-            buyCell.sellLBL.text = "Sell"
-            buyCell.buyNumberLBL.text = data?.data[indexPath.row].option2
-            buyCell.sellNumberLBL.text = data?.data[indexPath.row].option1
-            buyCell.arrowImageView.image = UIImage(systemName: "arrow.up.forward.app")
-            buyCell.ratioLBL.text = data?.data[indexPath.row].relative
-            
-            return buyCell
-            
+            let cellCurrency = screenShareTableView.dequeueReusableCell(withIdentifier: "CurrencyTableViewCell", for: indexPath) as! CurrencyTableViewCell
+            return cellCurrency
         default:
-            let exchangerCell =     screenShareCollectionView.dequeueReusableCell(withReuseIdentifier: "ExchangersCollectionViewCell", for: indexPath) as! ExchangersCollectionViewCell
-            exchangerCell.fillData(index: indexPath.row)
-            return exchangerCell
-            
+            let cellExchanger = screenShareTableView.dequeueReusableCell(withIdentifier: "ExchangerTableViewCell", for: indexPath) as! ExchangerTableViewCell
+            return cellExchanger
         }
-        
-        
-        
-        
     }
     
-    
 }
-
-
-
 

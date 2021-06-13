@@ -21,6 +21,7 @@ class ConverterTableViewCell: UITableViewCell {
         
         // Configure the view for the selected state
     }
+  
     func fillData(index:Int) {
         titleLBL.text = "EURO"
         priceLBL.text = "22.8"

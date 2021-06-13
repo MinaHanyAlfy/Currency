@@ -1,0 +1,30 @@
+
+/* Class = "UIButton"; normalTitle = "Close"; ObjectID = "ADM-Rk-yy3"; */
+"ADM-Rk-yy3.normalTitle" = "Close";
+
+/* Class = "UINavigationItem"; title = "دولار لبنان"; ObjectID = "CXB-tM-7UG"; */
+"CXB-tM-7UG.title" = "دولار لبنان";
+
+/* Class = "UIButton"; normalTitle = "Share Price"; ObjectID = "Jjg-Q6-GJV"; */
+"Jjg-Q6-GJV.normalTitle" = "Share Price";
+
+/* Class = "UIButton"; normalTitle = "Share"; ObjectID = "OeO-wr-Q8F"; */
+"OeO-wr-Q8F.normalTitle" = "Share";
+
+/* Class = "UIButton"; normalTitle = "Convert"; ObjectID = "cfe-Gw-zQe"; */
+"cfe-Gw-zQe.normalTitle" = "Convert";
+
+/* Class = "UIButton"; normalTitle = "Remove Ads"; ObjectID = "cph-rl-Vqv"; */
+"cph-rl-Vqv.normalTitle" = "Remove Ads";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "g0V-5o-4o4"; */
+"g0V-5o-4o4.title" = "Back";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "pcf-w0-66X"; */
+"pcf-w0-66X.title" = "Back";
+
+/* Class = "UITabBarItem"; title = "Dollar"; ObjectID = "v6g-gk-b9T"; */
+"v6g-gk-b9T.title" = "Dollar";
+
+/* Class = "UITextField"; placeholder = "Value"; ObjectID = "xQk-20-L9F"; */
+"xQk-20-L9F.placeholder" = "Value";

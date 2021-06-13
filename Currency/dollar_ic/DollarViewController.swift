@@ -8,7 +8,7 @@
 import UIKit
 
 class DollarViewController: UIViewController {
-
+    
     @IBOutlet weak var bottomConstrainFromBuyCollectionView: NSLayoutConstraint!
     @IBOutlet weak var sharePriceBtn: UIButton!
     @IBOutlet weak var buySellCollectionView: UICollectionView!
@@ -17,18 +17,22 @@ class DollarViewController: UIViewController {
     @IBOutlet weak var removeAdsBtn: UIButton!
     
     @IBOutlet weak var dollarCollectionView: UICollectionView!
-  
+    
+    
+    let nullData : Currency? = nil
     private var internationalData: CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
                 self.dollarCollectionView.reloadData()
-              //  var sharedTable : [CurrencyModel] = [data?.data[0] ]
             }
             
         }
     }
     @IBAction func sharePriceAction(_ sender: Any) {
-      //  performSegue(withIdentifier: "sharingObject", sender: sharedTable)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
+        //vc.recivedData = data?.data[0]
+        navigationController?.pushViewController(vc, animated: true)
+        
     }
     private var data: CurrencyModel?{
         didSet{
@@ -137,14 +141,13 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             fetchData(clientRequest: .getDefault())
             exchangerCollectionView.isHidden = false
             sharePriceBtn.isHidden = false
-            //            bottomConstrainFromBuyCollectionView!.isActive = false
+            
             bottomConstrainFromBuyCollectionView.constant = 212
             removeAdsBtn.isHidden = false
         case 1:
             fetchData(clientRequest: .getCurriencyPrice())
             exchangerCollectionView.isHidden = true
             sharePriceBtn.isHidden = true
-            //            bottomConstrainFromBuyCollectionView!.isActive = true
             bottomConstrainFromBuyCollectionView.constant = 24
             removeAdsBtn.isHidden = true
             
@@ -152,7 +155,6 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             fetchData(clientRequest: .getGoldPrice())
             exchangerCollectionView.isHidden = true
             sharePriceBtn.isHidden = true
-            //            bottomConstrainFromBuyCollectionView!.isActive = true
             bottomConstrainFromBuyCollectionView.constant = 24
             removeAdsBtn.isHidden = true
         }
@@ -174,24 +176,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         }
     }
     
-    //var sharedTable = [CurrencyModel].self
-    //   // func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        switch collectionView {
-    //        case buttonCollectionView:
-    //            return 2
-    //        default:
-    //            return 5
-    //        }
-    //    }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        switch collectionView {
-    //        case buttonCollectionView:
-    //            return 2
-    //        default:
-    //            return 5
-    //        }
-    //    }
     // MARK:- Call Api To Get Data
     
     private func fetchData(clientRequest: Curriencies){
@@ -219,10 +204,10 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     
     
     //MARK:- Sending data by Segue
-//    .  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? ShareViewController  {
-//            vc.recivedTable = sender as! [CurrencyModel].Type
-//        }
-//    }
-//    
+    //    .  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //        if let vc = segue.destination as? ShareViewController  {
+    //            vc.recivedTable = sender as! [CurrencyModel].Type
+    //        }
+    //    }
+    //
 }
