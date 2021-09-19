@@ -61,9 +61,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         case 1:
             let vc =   self.storyboard?.instantiateViewController(withIdentifier: "DollarViewController") as! DollarViewController
             self.navigationController?.pushViewController(vc, animated: true)
+        case 2:
+        let vc = GasViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let vc = InternationalViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        
         case 4:
             let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
             self.navigationController?.pushViewController(convertVC, animated: true)
+        case 5:
+            let vc = NewsViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         default:
         print("tapped")
         }

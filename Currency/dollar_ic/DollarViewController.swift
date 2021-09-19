@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+import Reachability
+import Alamofire
 class DollarViewController: UIViewController {
+    
     
     @IBOutlet weak var bottomConstrainFromBuyCollectionView: NSLayoutConstraint!
     @IBOutlet weak var sharePriceBtn: UIButton!
@@ -20,10 +22,12 @@ class DollarViewController: UIViewController {
     
     
     let nullData : Currency? = nil
+    let nullData1 : CurrencyModel? = nil
     private var internationalData: CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
                 self.dollarCollectionView.reloadData()
+               
             }
             
         }
@@ -36,8 +40,16 @@ class DollarViewController: UIViewController {
     }
     private var data: CurrencyModel?{
         didSet{
-            DispatchQueue.main.async {
+            DispatchQueue.main.async { [self] in
                 self.buySellCollectionView.reloadData()
+                if NetworkState.isConnected() {
+                    print("Connected")
+                    CoreDataLayer.shared.addCurrencyToStorage(self.data!)
+                }else {
+                    print("Not Connected")
+                }
+                
+                    
             }
             
         }
@@ -49,6 +61,9 @@ class DollarViewController: UIViewController {
         setUpUI()
         fetchData(clientRequest: .getDefault())
         fetchData()
+        
+            
+        
         // Do any additional setup after loading the view.
         
     }
@@ -111,6 +126,11 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             cell.nameLBL.text = internationalData?.data[indexPath.row].option2
             cell.codeLBL.text = internationalData?.data[indexPath.row].type
             cell.priceLBL.text = internationalData?.data[indexPath.row].option1
+            if internationalData?.data[indexPath.row].option3 == "1" {
+                cell.priceLBL.textColor = .systemGreen
+            }else {
+                cell.priceLBL.textColor = .systemRed
+            }
             return cell
             
         case buySellCollectionView:
@@ -122,6 +142,11 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             cell.sellNumberLBL.text = data?.data[indexPath.row].option1
             cell.arrowImageView.image = UIImage(systemName: "arrow.up.forward.app")
             cell.ratioLBL.text = data?.data[indexPath.row].relative
+            if data?.data[indexPath.row].option3 == "1" {
+                cell.ratioLBL.textColor = .systemGreen
+            }else {
+                cell.ratioLBL.textColor = .systemRed
+            }
             return cell
         case buttonCollectionView:
             let cell = buttonCollectionView.dequeueReusableCell(withReuseIdentifier: "ButtonCollectionViewCell", for: indexPath) as! ButtonCollectionViewCell
@@ -210,4 +235,9 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
     //        }
     //    }
     //
+}
+class NetworkState {
+    class func isConnected() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    }
 }

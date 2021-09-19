@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewsViewController" customModule="Currency" customModuleProvider="target">
+            <connections>
+                <outlet property="importNewsBtn" destination="Pcd-az-5Tr" id="oMK-Pd-6qt"/>
+                <outlet property="mainView" destination="i5M-Pr-FkT" id="21v-0u-4KL"/>
+                <outlet property="newsWKView" destination="onY-8d-KQv" id="MYr-K8-yKT"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pcd-az-5Tr">
+                    <rect key="frame" x="158" y="76" width="98" height="40"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <state key="normal" title="اخبار عاجلة">
+                        <color key="titleColor" systemColor="systemOrangeColor"/>
+                    </state>
+                </button>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="onY-8d-KQv">
+                    <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                    <color key="backgroundColor" red="1" green="1" blue="0.83529411760000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="onY-8d-KQv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="2UC-gc-ZjH"/>
+                <constraint firstItem="Pcd-az-5Tr" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="3Ml-T8-wz4"/>
+                <constraint firstItem="onY-8d-KQv" firstAttribute="top" secondItem="Pcd-az-5Tr" secondAttribute="bottom" constant="16" id="77v-ia-S0Y"/>
+                <constraint firstItem="Pcd-az-5Tr" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="H1t-4N-jy3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="onY-8d-KQv" secondAttribute="bottom" id="gsJ-m2-TZk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="onY-8d-KQv" secondAttribute="trailing" id="wWB-Ne-5cx"/>
+            </constraints>
+            <point key="canvasLocation" x="141" y="53"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

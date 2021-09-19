@@ -12,12 +12,18 @@ enum Curriencies{
     case getGoldPrice(id: Int = 7)
     case getCurriencyPrice(id: Int = 6)
     case getInternationalPrice(id: Int = 5)
+  
 }
 
 extension Curriencies: EndPoint{
     var baseURL: String {
         return "https://win1withus.com/del/api/currency_by_type-"
+        
     }
+    var baseURL2: String {
+        return "https://win1withus.com/del/api/diesel"
+    }
+    
     
     var path: String {
         switch self {

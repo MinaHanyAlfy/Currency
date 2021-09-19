@@ -23,14 +23,21 @@
 		ADC79BA9E551D801FC67BA52 /* Pods_Currency_CurrencyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA83FE168B72166D6226B0F /* Pods_Currency_CurrencyUITests.framework */; };
 		C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55EE6B92655D710009A9E9B /* EndPoint.swift */; };
 		C55EE6CD2655D915009A9E9B /* Curriencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55EE6CC2655D915009A9E9B /* Curriencies.swift */; };
+		CA4B4DDE269CC188003AF523 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B4DDC269CC188003AF523 /* GasViewController.swift */; };
+		CA4B4DDF269CC188003AF523 /* GasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4B4DDD269CC188003AF523 /* GasViewController.xib */; };
+		CA4B4DE5269CC234003AF523 /* GasCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B4DE3269CC234003AF523 /* GasCollectionViewCell.swift */; };
+		CA4B4DE6269CC234003AF523 /* GasCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4B4DE4269CC234003AF523 /* GasCollectionViewCell.xib */; };
 		CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */; };
 		CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */; };
 		CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */; };
 		CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */; };
 		CA4D582426615317004B8063 /* CoreDataLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4D582326615317004B8063 /* CoreDataLayer.swift */; };
+		CA51C245269E5F7300500A78 /* Gas.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA51C244269E5F7200500A78 /* Gas.swift */; };
+		CA51C24A269E5F8700500A78 /* BaseGasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA51C249269E5F8700500A78 /* BaseGasModel.swift */; };
 		CA57C11A264FF2C100790084 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C119264FF2C100790084 /* Currency.swift */; };
 		CA57C131265015EF00790084 /* ButtonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */; };
 		CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */; };
+		CA613B382676C0F400347474 /* CurrencyChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA613B372676C0F400347474 /* CurrencyChartViewController.swift */; };
 		CAA1E2F126679662001857BD /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1E2EF26679662001857BD /* DateTableViewCell.swift */; };
 		CAA1E2F226679662001857BD /* DateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAA1E2F026679662001857BD /* DateTableViewCell.xib */; };
 		CAA1E2F826679ACD001857BD /* ExchangerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1E2F626679ACD001857BD /* ExchangerTableViewCell.swift */; };
@@ -45,12 +52,15 @@
 		CACC8E84261FE9BA00D854FA /* DollarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E83261FE9BA00D854FA /* DollarViewController.swift */; };
 		CACC8E9F261FF38700D854FA /* DollarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */; };
 		CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */; };
+		CADC2DBD268F28B200C523FC /* InternationalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC2DBB268F28B200C523FC /* InternationalViewController.swift */; };
+		CADC2DBE268F28B200C523FC /* InternationalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADC2DBC268F28B200C523FC /* InternationalViewController.xib */; };
+		CADC2DC4268F303000C523FC /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC2DC2268F303000C523FC /* NewsViewController.swift */; };
+		CADC2DC5268F303000C523FC /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADC2DC3268F303000C523FC /* NewsViewController.xib */; };
 		CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC643726546E8B003E0032 /* ErorrMessage.swift */; };
 		CADC643D26547023003E0032 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC643C26547023003E0032 /* NetworkLayer.swift */; };
 		CADC646326552F78003E0032 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646226552F78003E0032 /* ShareViewController.swift */; };
 		CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */; };
 		CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */; };
-		CAEEE28526750040003F2457 /* Charts.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = CAEEE28426750040003F2457 /* Charts.xcworkspace */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -115,14 +125,21 @@
 		C55EE6CC2655D915009A9E9B /* Curriencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curriencies.swift; sourceTree = "<group>"; };
 		CA3E061126712048003AFEF1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		CA3E061526712048003AFEF1 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		CA4B4DDC269CC188003AF523 /* GasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
+		CA4B4DDD269CC188003AF523 /* GasViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GasViewController.xib; sourceTree = "<group>"; };
+		CA4B4DE3269CC234003AF523 /* GasCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasCollectionViewCell.swift; sourceTree = "<group>"; };
+		CA4B4DE4269CC234003AF523 /* GasCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GasCollectionViewCell.xib; sourceTree = "<group>"; };
 		CA4BFEFE264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Buy&SellCollectionViewCell.swift"; sourceTree = "<group>"; };
 		CA4BFEFF264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "Buy&SellCollectionViewCell.xib"; sourceTree = "<group>"; };
 		CA4BFF05264EA0C1003B6519 /* ExchangersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangersCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA4BFF06264EA0C1003B6519 /* ExchangersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExchangersCollectionViewCell.xib; sourceTree = "<group>"; };
 		CA4D582326615317004B8063 /* CoreDataLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataLayer.swift; sourceTree = "<group>"; };
+		CA51C244269E5F7200500A78 /* Gas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gas.swift; path = ../../../codegen_60ee279eb3640/Gas.swift; sourceTree = "<group>"; };
+		CA51C249269E5F8700500A78 /* BaseGasModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseGasModel.swift; path = ../../../codegen_60ee279eb3640/BaseGasModel.swift; sourceTree = "<group>"; };
 		CA57C119264FF2C100790084 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		CA57C12F265015EF00790084 /* ButtonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCollectionViewCell.swift; sourceTree = "<group>"; };
 		CA57C130265015EF00790084 /* ButtonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonCollectionViewCell.xib; sourceTree = "<group>"; };
+		CA613B372676C0F400347474 /* CurrencyChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyChartViewController.swift; sourceTree = "<group>"; };
 		CAA1E2EF26679662001857BD /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		CAA1E2F026679662001857BD /* DateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateTableViewCell.xib; sourceTree = "<group>"; };
 		CAA1E2F626679ACD001857BD /* ExchangerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangerTableViewCell.swift; sourceTree = "<group>"; };
@@ -138,12 +155,15 @@
 		CACC8E83261FE9BA00D854FA /* DollarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarViewController.swift; sourceTree = "<group>"; };
 		CACC8E9D261FF38700D854FA /* DollarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DollarCollectionViewCell.swift; sourceTree = "<group>"; };
 		CACC8E9E261FF38700D854FA /* DollarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DollarCollectionViewCell.xib; sourceTree = "<group>"; };
+		CADC2DBB268F28B200C523FC /* InternationalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternationalViewController.swift; sourceTree = "<group>"; };
+		CADC2DBC268F28B200C523FC /* InternationalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternationalViewController.xib; sourceTree = "<group>"; };
+		CADC2DC2268F303000C523FC /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		CADC2DC3268F303000C523FC /* NewsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		CADC643726546E8B003E0032 /* ErorrMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErorrMessage.swift; sourceTree = "<group>"; };
 		CADC643C26547023003E0032 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		CADC646226552F78003E0032 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		CADC646A26553C78003E0032 /* LBLCustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBLCustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CADC646B26553C78003E0032 /* LBLCustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LBLCustomCollectionViewCell.xib; sourceTree = "<group>"; };
-		CAEEE28426750040003F2457 /* Charts.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = Charts.xcworkspace; path = "../Charts-master/Charts.xcworkspace"; sourceTree = "<group>"; };
 		FE50D18BC7E918A879D4D238 /* Pods-Currency.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency.release.xcconfig"; path = "Target Support Files/Pods-Currency/Pods-Currency.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,7 +198,6 @@
 		2254D18F2644788E00A2504D = {
 			isa = PBXGroup;
 			children = (
-				CAEEE28426750040003F2457 /* Charts.xcworkspace */,
 				2254D19A2644788E00A2504D /* Currency */,
 				2254D1B42644788F00A2504D /* CurrencyTests */,
 				2254D1BF2644788F00A2504D /* CurrencyUITests */,
@@ -201,6 +220,10 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				CA4B4DDB269CC16F003AF523 /* GasVc */,
+				CADC2DBA268F288B00C523FC /* InternationalVc */,
+				CADC2DB9268F287900C523FC /* NewsVc */,
+				CA613B362676C0C500347474 /* CurrencyChartVc */,
 				CABBD441265AA6E90089B6F8 /* Converter Vc */,
 				CABE17CF2659B0C600F24679 /* Currency.entitlements */,
 				CADC647126553C95003E0032 /* Custom Cells Swift Fils */,
@@ -263,9 +286,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CA4B4DDB269CC16F003AF523 /* GasVc */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B4DDC269CC188003AF523 /* GasViewController.swift */,
+				CA4B4DDD269CC188003AF523 /* GasViewController.xib */,
+				CA4B4DE3269CC234003AF523 /* GasCollectionViewCell.swift */,
+				CA4B4DE4269CC234003AF523 /* GasCollectionViewCell.xib */,
+			);
+			name = GasVc;
+			sourceTree = "<group>";
+		};
 		CA57C11E264FF32300790084 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CA51C244269E5F7200500A78 /* Gas.swift */,
+				CA51C249269E5F8700500A78 /* BaseGasModel.swift */,
 				CA57C119264FF2C100790084 /* Currency.swift */,
 			);
 			path = Classes;
@@ -279,6 +315,14 @@
 				2254D19F2644788E00A2504D /* ViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		CA613B362676C0C500347474 /* CurrencyChartVc */ = {
+			isa = PBXGroup;
+			children = (
+				CA613B372676C0F400347474 /* CurrencyChartViewController.swift */,
+			);
+			path = CurrencyChartVc;
 			sourceTree = "<group>";
 		};
 		CABBD441265AA6E90089B6F8 /* Converter Vc */ = {
@@ -299,6 +343,24 @@
 				CACC8E83261FE9BA00D854FA /* DollarViewController.swift */,
 			);
 			path = dollar_ic;
+			sourceTree = "<group>";
+		};
+		CADC2DB9268F287900C523FC /* NewsVc */ = {
+			isa = PBXGroup;
+			children = (
+				CADC2DC2268F303000C523FC /* NewsViewController.swift */,
+				CADC2DC3268F303000C523FC /* NewsViewController.xib */,
+			);
+			name = NewsVc;
+			sourceTree = "<group>";
+		};
+		CADC2DBA268F288B00C523FC /* InternationalVc */ = {
+			isa = PBXGroup;
+			children = (
+				CADC2DBB268F28B200C523FC /* InternationalViewController.swift */,
+				CADC2DBC268F28B200C523FC /* InternationalViewController.xib */,
+			);
+			name = InternationalVc;
 			sourceTree = "<group>";
 		};
 		CADC643626546E69003E0032 /* Utilities */ = {
@@ -466,16 +528,19 @@
 				CAA1E3002667A380001857BD /* CurrencyTableViewCell.xib in Resources */,
 				CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */,
 				CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */,
+				CADC2DC5268F303000C523FC /* NewsViewController.xib in Resources */,
+				CA4B4DDF269CC188003AF523 /* GasViewController.xib in Resources */,
 				CA4BFF01264E9CFB003B6519 /* Buy&SellCollectionViewCell.xib in Resources */,
 				CA4BFF08264EA0C1003B6519 /* ExchangersCollectionViewCell.xib in Resources */,
 				CACC8EA0261FF38700D854FA /* DollarCollectionViewCell.xib in Resources */,
 				CABBD451265AABB50089B6F8 /* ConverterCollectionViewCell.xib in Resources */,
 				2254D1AB2644788F00A2504D /* LaunchScreen.storyboard in Resources */,
+				CA4B4DE6269CC234003AF523 /* GasCollectionViewCell.xib in Resources */,
 				CAA1E2F226679662001857BD /* DateTableViewCell.xib in Resources */,
 				CADC646D26553C78003E0032 /* LBLCustomCollectionViewCell.xib in Resources */,
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
+				CADC2DBE268F28B200C523FC /* InternationalViewController.xib in Resources */,
 				CAA1E2F926679ACD001857BD /* ExchangerTableViewCell.xib in Resources */,
-				CAEEE28526750040003F2457 /* Charts.xcworkspace in Resources */,
 				2254D1A32644788E00A2504D /* Main.storyboard in Resources */,
 				2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */,
 			);
@@ -605,10 +670,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA4B4DDE269CC188003AF523 /* GasViewController.swift in Sources */,
+				CA51C245269E5F7300500A78 /* Gas.swift in Sources */,
 				C55EE6CD2655D915009A9E9B /* Curriencies.swift in Sources */,
 				CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */,
+				CA613B382676C0F400347474 /* CurrencyChartViewController.swift in Sources */,
+				CA4B4DE5269CC234003AF523 /* GasCollectionViewCell.swift in Sources */,
 				2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */,
 				CA4D582426615317004B8063 /* CoreDataLayer.swift in Sources */,
+				CADC2DBD268F28B200C523FC /* InternationalViewController.swift in Sources */,
 				CAA1E2FF2667A380001857BD /* CurrencyTableViewCell.swift in Sources */,
 				CA4BFF07264EA0C1003B6519 /* ExchangersCollectionViewCell.swift in Sources */,
 				CADC643D26547023003E0032 /* NetworkLayer.swift in Sources */,
@@ -618,10 +688,12 @@
 				CAA1E2F126679662001857BD /* DateTableViewCell.swift in Sources */,
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
 				CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */,
+				CADC2DC4268F303000C523FC /* NewsViewController.swift in Sources */,
 				CAA1E2F826679ACD001857BD /* ExchangerTableViewCell.swift in Sources */,
 				CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */,
 				CADC643826546E8B003E0032 /* ErorrMessage.swift in Sources */,
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
+				CA51C24A269E5F8700500A78 /* BaseGasModel.swift in Sources */,
 				CABBD449265AAB8B0089B6F8 /* ConverterTableViewCell.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,
 				C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */,

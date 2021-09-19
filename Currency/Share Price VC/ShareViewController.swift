@@ -43,11 +43,11 @@ class ShareViewController: UIViewController {
     
     @IBAction func shareActionBtn(_ sender: Any) {
 //
-//        let items = ["This Screen from Lebanon doller application",screenShareTableView.contentSize] as [Any]
-//        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-//
-//        present(ac, animated: true, completion: nil)
-        let text = "This screen for Application Lebanon Dollar"
+        let items = ["This Screen from Lebanon doller application",viewToShare.asImage()] as [Any]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        ac.popoverPresentationController?.sourceView = self.view
+        self.present(ac, animated: true, completion: nil)
+       // let text = "This screen for Application Lebanon Dollar"
             //let image = UIImage(named: "")
             //let myWebsite = NSURL(string:"")
             //let shareAll= [text , image! , myWebsite]
@@ -105,4 +105,14 @@ extension ShareViewController : UITableViewDelegate,UITableViewDataSource{
     }
     
 }
+extension UIView {
 
+    // Using a function since `var image` might conflict with an existing variable
+    // (like on `UIImageView`)
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            layer.render(in: rendererContext.cgContext)
+        }
+    }
+}

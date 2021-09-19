@@ -10,6 +10,7 @@ pod 'MaterialComponents/Buttons'
 pod 'Alamofire' 
 pod 'SDWebImage'
 pod 'ReachabilitySwift'
+pod 'Charts'
   target 'CurrencyTests' do
     inherit! :search_paths
     # Pods for testing

@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m6w-zX-TNp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4016" y="619"/>
+            <point key="canvasLocation" x="4015.9420289855075" y="618.75"/>
         </scene>
         <!--Dollar-->
         <scene sceneID="8ik-LV-58g">
@@ -477,6 +477,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-pG-AhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1449" y="-88"/>
+        </scene>
+        <!--Currency Chart View Controller-->
+        <scene sceneID="8Ay-gV-wgF">
+            <objects>
+                <viewController id="mLR-4o-uBf" customClass="CurrencyChartViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Odh-0R-02j" customClass="BarChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="SVy-rY-Zwm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="barChartView" destination="Odh-0R-02j" id="6H2-Pl-Nto"/>
+                        <outlet property="chartView" destination="Odh-0R-02j" id="64f-1V-XOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnO-E2-wic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1539" y="844"/>
         </scene>
     </scenes>
     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
