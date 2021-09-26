@@ -462,7 +462,7 @@
         <!--Navigation Controller-->
         <scene sceneID="20O-g9-XXo">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXJ-9N-ecy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationControllerID" automaticallyAdjustsScrollViewInsets="NO" id="ZXJ-9N-ecy" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EfZ-Qn-c29">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -512,6 +512,7 @@
                                 <rect key="frame" x="87" y="336" width="240" height="224"/>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="DkC-Hh-DDf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Qwp-xD-c1l" firstAttribute="centerX" secondItem="z2b-77-lBn" secondAttribute="centerX" id="8Ks-fp-aag"/>
