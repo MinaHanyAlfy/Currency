@@ -11,6 +11,7 @@ pod 'Alamofire'
 pod 'SDWebImage'
 pod 'ReachabilitySwift'
 pod 'Charts'
+pod 'SwiftyGif' 
   target 'CurrencyTests' do
     inherit! :search_paths
     # Pods for testing
