@@ -61,13 +61,20 @@ class DollarViewController: UIViewController {
         setUpUI()
         fetchData(clientRequest: .getDefault())
         fetchData()
-        
+        removeAdsBtn.addTarget(self, action: #selector(removeAd), for: .touchUpInside)
             
         
         // Do any additional setup after loading the view.
         
     }
     
+    @objc func removeAd(){
+        let vc = EmptyViewController()
+//        self.navigationItem.backBarButtonItem?.isEnabled = true
+//        self.navigationItem.backBarButtonItem?.tintColor = .black
+        self.present(vc, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(vc, animated: true)
+    }
     private func registerCells(){
         dollarCollectionView.register(UINib(nibName: "DollarCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DollarCollectionViewCell")
         buySellCollectionView.register(UINib(nibName: "Buy&SellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Buy&SellCollectionViewCell")

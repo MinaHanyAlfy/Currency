@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ConverterTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLBL: UILabel!
     

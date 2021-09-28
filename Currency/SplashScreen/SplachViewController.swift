@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyGif
+@available(iOS 13.0, *)
 class SplachViewController: UIViewController,SwiftyGifDelegate {
     
     @IBOutlet var mainView: UIView!

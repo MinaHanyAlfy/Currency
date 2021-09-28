@@ -75,7 +75,7 @@ extension InternationalViewController {
 //        return 4
 //    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: internationalCollectionView.frame.width / 2 - 16 , height: internationalCollectionView.frame.height / 4)
+        return CGSize(width: internationalCollectionView.frame.width / 2 - 16 , height: internationalCollectionView.frame.height / 6 - 16)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 2, left: 4, bottom: 2, right: 4)

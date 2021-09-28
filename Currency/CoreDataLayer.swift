@@ -11,6 +11,8 @@ import UIKit
 import CoreData
 
 //
+@available(iOS 13.0, *)
+@available(iOS 13.0, *)
 class CoreDataLayer {
     private(set) var storedCurrencies = [CurrencyCD]()
     

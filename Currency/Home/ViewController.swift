@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 13.0, *)
 class ViewController: UIViewController {
     
     @IBOutlet weak var headerView: UIView!
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
     
 }
 
+@available(iOS 13.0, *)
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 6
@@ -69,13 +71,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             self.navigationController?.pushViewController(vc, animated: true)
         
         case 4:
-            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
-            self.navigationController?.pushViewController(convertVC, animated: true)
+//            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
+            let vc = EmptyViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = NewsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
-        print("tapped")
+            let vc = EmptyViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+     
         }
         
     }

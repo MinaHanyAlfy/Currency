@@ -8,10 +8,6 @@
 import UIKit
 import CoreData
 import Foundation
-
-
-
-
 class ConverterViewController: UIViewController {
     
     private var data: CurrencyModel?{
@@ -143,7 +139,6 @@ class ConverterViewController: UIViewController {
 }
 
 //MARK:- UICollectionView Delegate , CollectionView DataSource
-
 extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5

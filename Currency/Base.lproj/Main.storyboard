@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Af4-CZ-O0n">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -296,10 +297,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="MPH-by-ZYn" firstAttribute="width" secondItem="zrg-2b-est" secondAttribute="width" id="0kc-bf-XGl"/>
                                     <constraint firstItem="c1V-Ho-yci" firstAttribute="top" secondItem="HpE-J8-SmI" secondAttribute="top" constant="64" id="BMM-Dp-p7U"/>
                                     <constraint firstItem="MPH-by-ZYn" firstAttribute="leading" secondItem="HpE-J8-SmI" secondAttribute="leading" id="BvE-UG-hb0"/>
+                                    <constraint firstItem="MPH-by-ZYn" firstAttribute="bottom" secondItem="MRJ-OQ-bxk" secondAttribute="bottom" id="Hrk-kP-mji"/>
                                     <constraint firstAttribute="trailing" secondItem="MPH-by-ZYn" secondAttribute="trailing" id="dYO-77-5so"/>
                                     <constraint firstAttribute="bottom" secondItem="MPH-by-ZYn" secondAttribute="bottom" id="p8H-Ay-dgW"/>
                                     <constraint firstItem="MPH-by-ZYn" firstAttribute="top" secondItem="HpE-J8-SmI" secondAttribute="top" id="vrd-mW-bGN"/>
@@ -327,6 +331,8 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="y83-30-zeV"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" systemColor="systemOrangeColor"/>
                         <constraints>
                             <constraint firstItem="OxV-YD-V15" firstAttribute="leading" secondItem="y83-30-zeV" secondAttribute="leading" id="39u-7r-BO5"/>
                             <constraint firstItem="y83-30-zeV" firstAttribute="bottom" secondItem="HpE-J8-SmI" secondAttribute="bottom" id="6mh-xH-baQ"/>
@@ -478,25 +484,6 @@
             </objects>
             <point key="canvasLocation" x="1449" y="-88"/>
         </scene>
-        <!--Currency Chart View Controller-->
-        <scene sceneID="8Ay-gV-wgF">
-            <objects>
-                <viewController id="mLR-4o-uBf" customClass="CurrencyChartViewController" customModule="Currency" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Odh-0R-02j" customClass="BarChartView" customModule="Charts">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="SVy-rY-Zwm"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <connections>
-                        <outlet property="barChartView" destination="Odh-0R-02j" id="6H2-Pl-Nto"/>
-                        <outlet property="chartView" destination="Odh-0R-02j" id="64f-1V-XOe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZnO-E2-wic" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1539" y="844"/>
-        </scene>
         <!--Splach View Controller-->
         <scene sceneID="092-n1-z8x">
             <objects>
@@ -511,16 +498,26 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qwp-xD-c1l">
                                 <rect key="frame" x="87" y="336" width="240" height="224"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lebanon Dollar " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thu-Bu-ch6">
+                                <rect key="frame" x="83" y="648" width="248" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DkC-Hh-DDf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="thu-Bu-ch6" firstAttribute="width" secondItem="z2b-77-lBn" secondAttribute="width" multiplier="0.6" id="2NC-8H-dyD"/>
                             <constraint firstItem="Qwp-xD-c1l" firstAttribute="centerX" secondItem="z2b-77-lBn" secondAttribute="centerX" id="8Ks-fp-aag"/>
+                            <constraint firstItem="thu-Bu-ch6" firstAttribute="height" secondItem="z2b-77-lBn" secondAttribute="height" multiplier="0.05" id="9ng-5e-eyx"/>
                             <constraint firstAttribute="trailing" secondItem="z2b-77-lBn" secondAttribute="trailing" id="De7-A6-x6b"/>
                             <constraint firstItem="z2b-77-lBn" firstAttribute="top" secondItem="iFB-5r-f2a" secondAttribute="top" id="HT0-gq-85y"/>
                             <constraint firstAttribute="bottom" secondItem="z2b-77-lBn" secondAttribute="bottom" id="Ho1-m2-qr6"/>
                             <constraint firstItem="Qwp-xD-c1l" firstAttribute="centerY" secondItem="z2b-77-lBn" secondAttribute="centerY" id="R1Z-xj-pvi"/>
                             <constraint firstItem="Qwp-xD-c1l" firstAttribute="height" secondItem="z2b-77-lBn" secondAttribute="height" multiplier="0.25" id="Trg-Va-7XR"/>
+                            <constraint firstItem="thu-Bu-ch6" firstAttribute="top" secondItem="Qwp-xD-c1l" secondAttribute="bottom" constant="88" id="Yox-OI-Y4z"/>
+                            <constraint firstItem="thu-Bu-ch6" firstAttribute="centerX" secondItem="z2b-77-lBn" secondAttribute="centerX" id="dps-lp-Sj5"/>
                             <constraint firstItem="z2b-77-lBn" firstAttribute="leading" secondItem="iFB-5r-f2a" secondAttribute="leading" id="mtj-SE-76K"/>
                             <constraint firstItem="Qwp-xD-c1l" firstAttribute="width" secondItem="z2b-77-lBn" secondAttribute="width" multiplier="0.57971" id="z4L-le-4QE"/>
                         </constraints>
