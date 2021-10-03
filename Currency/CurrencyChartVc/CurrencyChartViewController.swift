@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Charts
+//import Charts
 	
 class CurrencyChartViewController: UIViewController {
-    @IBOutlet var barChartView: BarChartView!
+//    @IBOutlet var barChartView: BarChartView!
 //link api https://win1withus.com/del/api/historythree-2-month 
     override func viewDidLoad() {
         super.viewDidLoad()

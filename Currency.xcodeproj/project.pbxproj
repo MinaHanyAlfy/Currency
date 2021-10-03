@@ -23,6 +23,11 @@
 		7F44848F270112FD000411D7 /* BaseGasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44848E270112FD000411D7 /* BaseGasModel.swift */; };
 		7F44849127011368000411D7 /* dollar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7F44849027011367000411D7 /* dollar.gif */; };
 		7F44849627011507000411D7 /* SplachViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44849527011507000411D7 /* SplachViewController.swift */; };
+		7FB4258F270894B90063F022 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4258D270894B90063F022 /* ChatViewController.swift */; };
+		7FB42590270894B90063F022 /* ChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4258E270894B90063F022 /* ChatViewController.xib */; };
+		7FB4259327089A6F0063F022 /* ChatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB4259127089A6F0063F022 /* ChatTableViewCell.swift */; };
+		7FB4259427089A6F0063F022 /* ChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FB4259227089A6F0063F022 /* ChatTableViewCell.xib */; };
+		7FC28916270876EE00E4426F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FC28915270876EE00E4426F /* GoogleService-Info.plist */; };
 		83AA4B4080802797A97EE42E /* Pods_Currency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266D88F6A81C2219D5A92D83 /* Pods_Currency.framework */; };
 		C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55EE6B92655D710009A9E9B /* EndPoint.swift */; };
 		C55EE6CD2655D915009A9E9B /* Curriencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55EE6CC2655D915009A9E9B /* Curriencies.swift */; };
@@ -126,6 +131,11 @@
 		7F44848E270112FD000411D7 /* BaseGasModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseGasModel.swift; path = Currency/BaseGasModel.swift; sourceTree = SOURCE_ROOT; };
 		7F44849027011367000411D7 /* dollar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = dollar.gif; sourceTree = "<group>"; };
 		7F44849527011507000411D7 /* SplachViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplachViewController.swift; sourceTree = "<group>"; };
+		7FB4258D270894B90063F022 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		7FB4258E270894B90063F022 /* ChatViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatViewController.xib; sourceTree = "<group>"; };
+		7FB4259127089A6F0063F022 /* ChatTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewCell.swift; sourceTree = "<group>"; };
+		7FB4259227089A6F0063F022 /* ChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatTableViewCell.xib; sourceTree = "<group>"; };
+		7FC28915270876EE00E4426F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9CC9ABFB703E4418260E2E16 /* Pods-Currency.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency.debug.xcconfig"; path = "Target Support Files/Pods-Currency/Pods-Currency.debug.xcconfig"; sourceTree = "<group>"; };
 		ABA93FCB895DC8A67FE0D342 /* Pods_Currency_CurrencyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency_CurrencyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55EE6B92655D710009A9E9B /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
@@ -230,6 +240,8 @@
 		2254D19A2644788E00A2504D /* Currency */ = {
 			isa = PBXGroup;
 			children = (
+				7FB4258C270894A20063F022 /* ChatVc */,
+				7FC28915270876EE00E4426F /* GoogleService-Info.plist */,
 				DD2E1F20270351C40002C55B /* CurrencyDebug.entitlements */,
 				DDEF52C42703209700E8FCCE /* EmptyVc */,
 				7F448494270114F2000411D7 /* SplashScreen */,
@@ -313,6 +325,17 @@
 				7F44849527011507000411D7 /* SplachViewController.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		7FB4258C270894A20063F022 /* ChatVc */ = {
+			isa = PBXGroup;
+			children = (
+				7FB4258D270894B90063F022 /* ChatViewController.swift */,
+				7FB4258E270894B90063F022 /* ChatViewController.xib */,
+				7FB4259127089A6F0063F022 /* ChatTableViewCell.swift */,
+				7FB4259227089A6F0063F022 /* ChatTableViewCell.xib */,
+			);
+			path = ChatVc;
 			sourceTree = "<group>";
 		};
 		CA4B4DDB269CC16F003AF523 /* GasVc */ = {
@@ -575,6 +598,7 @@
 			files = (
 				CAA1E3002667A380001857BD /* CurrencyTableViewCell.xib in Resources */,
 				7F44849127011368000411D7 /* dollar.gif in Resources */,
+				7FB4259427089A6F0063F022 /* ChatTableViewCell.xib in Resources */,
 				CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */,
 				CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */,
 				CADC2DC5268F303000C523FC /* NewsViewController.xib in Resources */,
@@ -589,10 +613,12 @@
 				2254D1A82644788F00A2504D /* Assets.xcassets in Resources */,
 				CADC2DBE268F28B200C523FC /* InternationalViewController.xib in Resources */,
 				DD003389270325CD00CA62B2 /* ChartViewController.xib in Resources */,
+				7FB42590270894B90063F022 /* ChatViewController.xib in Resources */,
 				CAA1E2F926679ACD001857BD /* ExchangerTableViewCell.xib in Resources */,
 				2254D1A32644788E00A2504D /* Main.storyboard in Resources */,
 				DDEF52C8270320E300E8FCCE /* EmptyViewController.xib in Resources */,
 				2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */,
+				7FC28916270876EE00E4426F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +749,7 @@
 				CA4B4DDE269CC188003AF523 /* GasViewController.swift in Sources */,
 				C55EE6CD2655D915009A9E9B /* Curriencies.swift in Sources */,
 				CA4BFF00264E9CFB003B6519 /* Buy&SellCollectionViewCell.swift in Sources */,
+				7FB4258F270894B90063F022 /* ChatViewController.swift in Sources */,
 				CA613B382676C0F400347474 /* CurrencyChartViewController.swift in Sources */,
 				CA4B4DE5269CC234003AF523 /* GasCollectionViewCell.swift in Sources */,
 				2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */,
@@ -740,6 +767,7 @@
 				2254D1A02644788E00A2504D /* ViewController.swift in Sources */,
 				CABBD450265AABB50089B6F8 /* ConverterCollectionViewCell.swift in Sources */,
 				CADC2DC4268F303000C523FC /* NewsViewController.swift in Sources */,
+				7FB4259327089A6F0063F022 /* ChatTableViewCell.swift in Sources */,
 				CAA1E2F826679ACD001857BD /* ExchangerTableViewCell.swift in Sources */,
 				CADC646C26553C78003E0032 /* LBLCustomCollectionViewCell.swift in Sources */,
 				7F44848F270112FD000411D7 /* BaseGasModel.swift in Sources */,
@@ -935,6 +963,7 @@
 				CODE_SIGN_ENTITLEMENTS = Currency/CurrencyDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FCL47U2TTD;
 				EXCLUDED_ARCHS = "armv6 armv7";
 				INFOPLIST_FILE = Currency/Info.plist;
@@ -947,7 +976,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -960,6 +989,7 @@
 				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FCL47U2TTD;
 				EXCLUDED_ARCHS = "armv6 armv7";
 				INFOPLIST_FILE = Currency/Info.plist;
@@ -973,7 +1003,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

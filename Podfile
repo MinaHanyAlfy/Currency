@@ -11,8 +11,11 @@ target 'Currency' do
 pod 'Alamofire' 
 pod 'SDWebImage'
 pod 'ReachabilitySwift'
-pod 'Charts'
+
 pod 'SwiftyGif' 
+pod 'Firebase'
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
   target 'CurrencyTests' do
     inherit! :search_paths
     # Pods for testing

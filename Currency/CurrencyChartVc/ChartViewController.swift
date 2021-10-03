@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import Charts
+//import Charts
 import Alamofire
 import Reachability
 class ChartViewController: UIViewController {
     @IBOutlet weak var noChartLabel: UILabel!
-    @IBOutlet weak var barChartView: BarChartView!
+//    @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet var mainView: UIView!
     //link api https://win1withus.com/del/api/historythree-2-month
     override func viewDidLoad() {
