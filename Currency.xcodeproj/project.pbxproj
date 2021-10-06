@@ -19,6 +19,8 @@
 		2254D1E9264480F400A2504D /* HomeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2254D1E7264480F400A2504D /* HomeCollectionViewCell.swift */; };
 		2254D1EA264480F400A2504D /* HomeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2254D1E8264480F400A2504D /* HomeCollectionViewCell.xib */; };
 		697A3D475FC6E626AFC0D73C /* Pods_Currency_CurrencyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABA93FCB895DC8A67FE0D342 /* Pods_Currency_CurrencyUITests.framework */; };
+		7F2BEF6D270E3E1F002C160F /* ChattViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2BEF6B270E3E1F002C160F /* ChattViewController.swift */; };
+		7F2BEF6E270E3E1F002C160F /* ChattViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F2BEF6C270E3E1F002C160F /* ChattViewController.xib */; };
 		7F43DEC0270DDF99003FDAEB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F43DEBF270DDF99003FDAEB /* Message.swift */; };
 		7F44848D270112EE000411D7 /* Gas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44848C270112EE000411D7 /* Gas.swift */; };
 		7F44848F270112FD000411D7 /* BaseGasModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F44848E270112FD000411D7 /* BaseGasModel.swift */; };
@@ -128,6 +130,8 @@
 		266D88F6A81C2219D5A92D83 /* Pods_Currency.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Currency.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F6C4E4654A701C64BEF79CB /* Pods-CurrencyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CurrencyTests.debug.xcconfig"; path = "Target Support Files/Pods-CurrencyTests/Pods-CurrencyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC4B6A38C3B51E7F9477E40 /* Pods-Currency-CurrencyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Currency-CurrencyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Currency-CurrencyUITests/Pods-Currency-CurrencyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7F2BEF6B270E3E1F002C160F /* ChattViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattViewController.swift; sourceTree = "<group>"; };
+		7F2BEF6C270E3E1F002C160F /* ChattViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattViewController.xib; sourceTree = "<group>"; };
 		7F43DEBF270DDF99003FDAEB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7F44848C270112EE000411D7 /* Gas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gas.swift; path = Currency/Gas.swift; sourceTree = SOURCE_ROOT; };
 		7F44848E270112FD000411D7 /* BaseGasModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseGasModel.swift; path = Currency/BaseGasModel.swift; sourceTree = SOURCE_ROOT; };
@@ -336,6 +340,8 @@
 				7FB4258E270894B90063F022 /* ChatViewController.xib */,
 				7FB4259127089A6F0063F022 /* ChatTableViewCell.swift */,
 				7FB4259227089A6F0063F022 /* ChatTableViewCell.xib */,
+				7F2BEF6B270E3E1F002C160F /* ChattViewController.swift */,
+				7F2BEF6C270E3E1F002C160F /* ChattViewController.xib */,
 			);
 			path = ChatVc;
 			sourceTree = "<group>";
@@ -602,6 +608,7 @@
 				CAA1E3002667A380001857BD /* CurrencyTableViewCell.xib in Resources */,
 				7F44849127011368000411D7 /* dollar.gif in Resources */,
 				7FB4259427089A6F0063F022 /* ChatTableViewCell.xib in Resources */,
+				7F2BEF6E270E3E1F002C160F /* ChattViewController.xib in Resources */,
 				CABBD44A265AAB8B0089B6F8 /* ConverterTableViewCell.xib in Resources */,
 				CA57C132265015EF00790084 /* ButtonCollectionViewCell.xib in Resources */,
 				CADC2DC5268F303000C523FC /* NewsViewController.xib in Resources */,
@@ -778,6 +785,7 @@
 				2254D19C2644788E00A2504D /* AppDelegate.swift in Sources */,
 				DD003388270325CD00CA62B2 /* ChartViewController.swift in Sources */,
 				7F43DEC0270DDF99003FDAEB /* Message.swift in Sources */,
+				7F2BEF6D270E3E1F002C160F /* ChattViewController.swift in Sources */,
 				CABBD449265AAB8B0089B6F8 /* ConverterTableViewCell.swift in Sources */,
 				2254D19E2644788E00A2504D /* SceneDelegate.swift in Sources */,
 				C55EE6BA2655D710009A9E9B /* EndPoint.swift in Sources */,

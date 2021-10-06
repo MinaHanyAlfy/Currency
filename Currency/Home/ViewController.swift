@@ -71,14 +71,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             self.navigationController?.pushViewController(vc, animated: true)
         
         case 4:
-//            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
-            let vc = EmptyViewController()
-            self.navigationController?.pushViewController(vc, animated: true)
+            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
+//            let vc = EmptyViewController()
+            self.navigationController?.pushViewController(convertVC, animated: true)
         case 5:
             let vc = NewsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
-            let vc = ChatViewController()
+            let vc = ChattViewController()
             self.navigationController?.pushViewController(vc, animated: true)
      
         }

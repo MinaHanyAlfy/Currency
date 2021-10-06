@@ -10,7 +10,6 @@ import Reachability
 import Alamofire
 class DollarViewController: UIViewController {
     
-    
     @IBOutlet weak var bottomConstrainFromBuyCollectionView: NSLayoutConstraint!
     @IBOutlet weak var sharePriceBtn: UIButton!
     @IBOutlet weak var buySellCollectionView: UICollectionView!
@@ -42,7 +41,8 @@ class DollarViewController: UIViewController {
         didSet{
             DispatchQueue.main.async { [self] in
                 self.buySellCollectionView.reloadData()
-                if NetworkState.isConnected() {
+                    let reachability = try! Reachability()
+                    if let check = NetworkReachabilityManager()?.isReachable,check{
                     print("Connected")
                     CoreDataLayer.shared.addCurrencyToStorage(self.data!)
                 }else {
@@ -167,6 +167,8 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let reachability = try! Reachability()
+           if let check = NetworkReachabilityManager()?.isReachable,check{
         guard collectionView == buttonCollectionView else {return}
         switch indexPath.row {
         case 0:
@@ -190,6 +192,11 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
             bottomConstrainFromBuyCollectionView.constant = 24
             removeAdsBtn.isHidden = true
         }
+           }else {
+            let alert = UIAlertController(title: "Please", message: "Check Internet Connection", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+           }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -226,7 +233,7 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         NetworkLayer.shared.getResults(clientRequest: .getInternationalPrice(), decodingModel: CurrencyModel.self) { [weak self] (response) in
             switch response{
             case .success(let data):
-                self?.data = data
+//                self?.data = data
                 self?.internationalData = data
             case .failure(let error):
                 print(error.localizedDescription)
@@ -234,17 +241,4 @@ extension DollarViewController:UICollectionViewDelegate,UICollectionViewDelegate
         }
     }
     
-    
-    //MARK:- Sending data by Segue
-    //    .  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        if let vc = segue.destination as? ShareViewController  {
-    //            vc.recivedTable = sender as! [CurrencyModel].Type
-    //        }
-    //    }
-    //
-}
-class NetworkState {
-    class func isConnected() ->Bool {
-        return NetworkReachabilityManager()!.isReachable
-    }
 }

@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 import Foundation
-class ConverterViewController: UIViewController {
-    
+class ConverterViewController: UIViewController  {
+ 
     private var data: CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
@@ -22,11 +22,13 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var convertsTableView: UITableView!
     @IBOutlet weak var valueTF: UITextField!
     @IBOutlet weak var convertBtn: UIButton!
+    var delegate : SendCoreData?
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setUpUI()
         fetchData()
+//        delegate?.fetchSavedInternational(currencyInternational: <#T##CurrencyModel#>)
     }
     private func registerCells(){
         currenciesCollectionView.register(UINib(nibName: "ConverterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ConverterCollectionViewCell")
