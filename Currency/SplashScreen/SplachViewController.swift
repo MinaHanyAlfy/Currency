@@ -12,6 +12,7 @@ import Alamofire
 import Reachability
 @available(iOS 13.0, *)
 class SplachViewController: UIViewController,SwiftyGifDelegate {
+   
     public var currArr = [Currency]()
     var internationalData: CurrencyModel?{
         didSet{
@@ -21,6 +22,7 @@ class SplachViewController: UIViewController,SwiftyGifDelegate {
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var gifImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    var delegate : SendCoreData?
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let reachability = try! Reachability()
@@ -61,6 +63,7 @@ class SplachViewController: UIViewController,SwiftyGifDelegate {
             self.fetchCurrencyData()
             print("Success ")
             print(self.internationalData)
+//                    self.delegate?.fetchSavedGas(gas: <#T##Gas#>)
         }
        
                }
@@ -179,6 +182,11 @@ extension SplachViewController{
         }
     }
 }
-
+protocol SendCoreData {
+    func fetchSavedInternational(currencyInternational: Currency)
+    func fetchSavedGas(gas: Gas)
+    func fetchSavedLocalCurrency(currencyLocal: Currency)
+    
+}
 
 

@@ -9,6 +9,9 @@ PODS:
     - FirebaseAnalytics (= 6.9.0)
   - Firebase/CoreOnly (6.34.0):
     - FirebaseCore (= 6.10.4)
+  - Firebase/Database (6.34.0):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (~> 6.6.0)
   - Firebase/Messaging (6.34.0):
     - Firebase/CoreOnly
     - FirebaseMessaging (~> 4.7.1)
@@ -30,6 +33,9 @@ PODS:
     - GoogleUtilities/Environment (~> 6.7)
     - GoogleUtilities/Logger (~> 6.7)
     - nanopb (~> 1.30906.0)
+  - FirebaseDatabase (6.6.0):
+    - FirebaseCore (~> 6.10)
+    - leveldb-library (~> 1.22)
   - FirebaseInstallations (1.7.0):
     - FirebaseCore (~> 6.10)
     - GoogleUtilities/Environment (~> 6.7)
@@ -75,6 +81,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.7.2):
     - GoogleUtilities/Logger
+  - leveldb-library (1.22.1)
   - nanopb (1.30906.0):
     - nanopb/decode (= 1.30906.0)
     - nanopb/encode (= 1.30906.0)
@@ -92,6 +99,8 @@ DEPENDENCIES:
   - Alamofire
   - Firebase
   - Firebase/Analytics
+  - Firebase/Core
+  - Firebase/Database
   - Firebase/Messaging
   - ReachabilitySwift
   - SDWebImage
@@ -104,12 +113,14 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseCoreDiagnostics
+    - FirebaseDatabase
     - FirebaseInstallations
     - FirebaseInstanceID
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleDataTransport
     - GoogleUtilities
+    - leveldb-library
     - nanopb
     - PromisesObjC
     - Protobuf
@@ -123,12 +134,14 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseCore: d3a978a3cfa3240bf7e4ba7d137fdf5b22b628ec
   FirebaseCoreDiagnostics: 770ac5958e1372ce67959ae4b4f31d8e127c3ac1
+  FirebaseDatabase: 13a865a4b85897462b930eb683bda8f52583713f
   FirebaseInstallations: 466c7b4d1f58fe16707693091da253726a731ed2
   FirebaseInstanceID: bd3ffc24367f901a43c063b36c640b345a4a5dd1
   FirebaseMessaging: 5eca4ef173de76253352511aafef774caa1cba2a
   GoogleAppMeasurement: a6a3a066369828db64eda428cb2856dc1cdc7c4e
   GoogleDataTransport: f56af7caa4ed338dc8e138a5d7c5973e66440833
   GoogleUtilities: 7f2f5a07f888cdb145101d6042bc4422f57e70b3
+  leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 1a37ebea1338949e9ac35a3f06e80b3f536eec8d
@@ -136,6 +149,6 @@ SPEC CHECKSUMS:
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: bb96e06cac4e11eeda7ea3f02c0d8c24201fca4d
+PODFILE CHECKSUM: 9219daab033055d355504992759527c9e6e05100
 
 COCOAPODS: 1.11.2

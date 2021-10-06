@@ -78,7 +78,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             let vc = NewsViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         default:
-            let vc = EmptyViewController()
+            let vc = ChatViewController()
             self.navigationController?.pushViewController(vc, animated: true)
      
         }
