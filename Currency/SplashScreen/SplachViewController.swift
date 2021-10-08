@@ -29,7 +29,11 @@ class SplachViewController: UIViewController,SwiftyGifDelegate,SendCoreData {
     public var currArr = [Currency]()
     var internationalData: CurrencyModel?{
         didSet{
-        
+            DispatchQueue.main.async {
+                for curr in self.internationalData?.data ?? []{
+                    self.saveCurrency(currency: curr)
+                }
+            }
         }
     }
     @IBOutlet var mainView: UIView!
@@ -176,6 +180,37 @@ extension SplachViewController {
                 }
             }
         }
+        
+    }
+    func saveCurrency(currency: Currency){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mangedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "CurrencyCD", in: mangedContext)
+        let currencyCoreData = NSManagedObject(entity: entity!, insertInto: mangedContext)
+        
+        currencyCoreData.setValue(currency.id, forKey: "id")
+        currencyCoreData.setValue(currency.option1, forKey: "option1")
+        currencyCoreData.setValue(currency.option2, forKey: "option2")
+        currencyCoreData.setValue(currency.option3, forKey: "option3")
+        currencyCoreData.setValue(currency.type, forKey: "type")
+        currencyCoreData.setValue(currency.relative, forKey: "relative")
+        currencyCoreData.setValue(currency.country, forKey: "country")
+        currencyCoreData.setValue(currency.created_at, forKey: "created_at")
+        currencyCoreData.setValue(currency.updated_at, forKey: "updated_at")
+        currencyCoreData.setValue(currency.last_buy, forKey: "last_buy")
+        currencyCoreData.setValue(currency.last_sell, forKey: "last_sell")
+        currencyCoreData.setValue(currency.state, forKey: "state")
+  
+        
+        do {
+            try mangedContext.save()
+            print(currencyCoreData)
+            print("Done Saving currencys")
+        } catch let error as NSError {
+            print(error)
+        }
+        appDelegate.saveContext()
     }
     
 }

@@ -9,7 +9,12 @@ import UIKit
 import CoreData
 import Foundation
 class ConverterViewController: UIViewController  {
- 
+    var dPrice : Double = 0.0
+    var tPrice : Double = 0.0
+    var rPrice : Double = 0.0
+    var ePrice : Double = 0.0
+    var mMoney : Double = 100.0
+    var selectedCurr : String?
     private var data: CurrencyModel?{
         didSet{
             DispatchQueue.main.async {
@@ -18,18 +23,26 @@ class ConverterViewController: UIViewController  {
             
         }
     }
+    var arrCurrency: [Currency] = []{
+        didSet{
+            DispatchQueue.main.async {
+                self.convertsTableView.reloadData()
+            }
+        }
+    }
     @IBOutlet weak var currenciesCollectionView: UICollectionView!
     @IBOutlet weak var convertsTableView: UITableView!
     @IBOutlet weak var valueTF: UITextField!
     @IBOutlet weak var convertBtn: UIButton!
     var delegate : SendCoreData?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-        fetchData()
-//        delegate?.fetchSavedInternational(currencyInternational: <#T##CurrencyModel#>)
+
     }
+    
     private func registerCells(){
         currenciesCollectionView.register(UINib(nibName: "ConverterCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "ConverterCollectionViewCell")
         convertsTableView.register(UINib(nibName: "ConverterTableViewCell", bundle: nil), forCellReuseIdentifier: "ConverterTableViewCell")
@@ -51,8 +64,8 @@ class ConverterViewController: UIViewController  {
     
     @IBAction func convertActionbtn(_ sender: Any) {
         if (valueTF.text != nil){
-        
-        self.convertsTableView.reloadData()
+            getDataFromStorage(id: Int(valueTF.text ?? "") ?? 0)
+            
         }
         
     }
@@ -72,17 +85,90 @@ class ConverterViewController: UIViewController  {
     
     //MARK:- Core Data Methods
     
-    private func getDataFromStorage(){
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-            let managedContext = appDelegate.persistentContainer.viewContext
-            let fetchRequest : NSFetchRequest<CurrencyCD> = CurrencyCD.fetchRequest()
+    private func getDataFromStorage(id: Int){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrencyCD")
             do{
-                storedCurrencies = try managedContext.fetch(fetchRequest)
+                
+                let stored = try managedContext.fetch(fetchRequest)
+                if stored.count > 0 {
+                    for curr in stored {
+                        let localCurr = Currency(id:  curr.value(forKey: "id") as? Int, option1: curr.value(forKey: "option1") as? String, option2: curr.value(forKey: "option2") as? String, option3: curr.value(forKey: "option3") as? String, last_sell: curr.value(forKey: "last_sell") as? String, last_buy: curr.value(forKey: "last_buy") as? String, relative:  curr.value(forKey: "relative") as? String, type:  curr.value(forKey: "type") as? String, country:  curr.value(forKey: "country") as? String, state:  curr.value(forKey: "state") as? Int, created_at:  curr.value(forKey: "created_at") as? String, updated_at:  curr.value(forKey: "updated_at") as? String)
+                        
+                        if localCurr.id ==  65 || localCurr.id == 162  || localCurr.id == 163 || localCurr.id == 43
+                        {
+                            self.arrCurrency.append(localCurr)
+                       
+                        }
+                        
+                    }
+                var curr = Currency.init(id: 2, option1: "", option2: "دولار", option3: "1", last_sell: "", last_buy: "", relative: "", type: "Dollar", country: "عالمي", state: 5, created_at: "", updated_at: "")
+            
+                self.arrCurrency.append(curr)
+                check(id: id)
+                }
             }catch let error as NSError{
                 print(error)
             }
+                
         }
+    
+    func check(id: Int)  {
+        
+        for i in 0...arrCurrency.count {
+            
+//            if arrCurrency[i].id == id {
+//                self.arrCurrency.remove(at: i)
+//            }
+        }
+        print("asdasdasdasd")
+        print(arrCurrency)
     }
+
+//    func getQuestions(){
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let managedContext = appDelegate.persistentContainer.viewContext
+//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrencyCD")
+//        quests = []
+//        do {
+//            let questions = try managedContext.fetch(fetchRequest)
+//            //            let result = questions.last
+//            if questions.count > 0 {
+//                var questionsRepeat = [Datum]()
+//                for question in questions {
+//                    var questsw = Datum()
+//                    questsw.answerIDS = question.value(forKey: "answer_ids") as? String
+//                    questsw.qID = question.value(forKey: "q_id") as? Int
+//                    questsw.qQuestionText = question.value(forKey: "q_question_text") as? String
+//                    questsw.rates = question.value(forKey: "rates") as? Int
+//                    questsw.qRate = question.value(forKey: "q_rate") as? Double
+//                    questsw.qTypeID = question.value(forKey: "q_type_id") as? Int
+//                    questsw.qtName = question.value(forKey: "qt_name") as? String
+//                    questsw.answers = question.value(forKey: "answers") as? String
+//                    //                    questsw.allAnswer =
+//                    questsw.qgID = question.value(forKey: "qg_id") as? Int
+//                    questsw.qgName = question.value(forKey: "qg_name") as? String
+//                    questsw.totalAnswers = question.value(forKey: "total_answers") as? Int
+//                    quests.append(questsw)
+//                    //                    }
+//
+//                }
+//                print("Questions Number\(quests.count)")
+//                let questsNew = unique(source: quests)
+//                AppDelegate.questionsStored = questsNew
+//                print("Questions Number\(questsNew.count)")
+//
+//                print( AppDelegate.questionsStored)
+//                print("asdasdsadsadasd")
+//            }
+//
+//
+//        }catch let error as NSError {
+//            print(error)
+//            print("error core data")
+//        }
+//    }
     //Add
 //    func addCurrencyToStorage(_ currency: Currency){
 //        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
@@ -159,7 +245,9 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
          let cell = currenciesCollectionView.cellForItem(at: indexPath) as? ConverterCollectionViewCell
         cell?.color()
-        collectionView.deselectItem(at: indexPath, animated: true)
+        selectedCurr = cell?.currencyLBL.text
+        print(selectedCurr ?? "")
+//        collectionView.deselectItem(at: indexPath, animated: true)
            
     }
     
@@ -174,7 +262,7 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
 //MARK:- TableView Delegate , TableView DataSource
 extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data?.data.count ?? 0
+        return arrCurrency.count
     }
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -183,7 +271,10 @@ extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConverterTableViewCell", for: indexPath) as! ConverterTableViewCell
         
         if( valueTF.text != "0"){
+        
 //            let value = Double(valueTF.text!)
+            cell.priceLBL.text = arrCurrency[indexPath.row].option1
+            cell.titleLBL.text = arrCurrency[indexPath.row].option2
 //            let secValue = Double(data?.data[indexPath.row].option2 ?? "0.0")
 //            print(data?.data[indexPath.row].option2)
 //            print(secValue)

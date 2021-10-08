@@ -8,7 +8,15 @@
 import UIKit
 
 class ConverterCollectionViewCell: UICollectionViewCell {
-    
+    override var isSelected: Bool{
+        didSet{
+            if isSelected == true {
+                color()
+            }else {
+                unColor()
+            }
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

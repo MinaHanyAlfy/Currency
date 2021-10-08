@@ -11,6 +11,14 @@ import InputBarAccessoryView
 import FirebaseAuth
 import FirebaseFirestore
 import SDWebImage
+import FirebaseDatabase
+
+struct Messanger  {
+    var message : String?
+    var messageTime: Date?
+    var uid: String?
+    var uname: String?
+}
 
 struct Sender :SenderType {
     var senderId: String
@@ -23,36 +31,100 @@ struct MessageSender : MessageType {
     var messageId: String
     var kind: MessageKind
 }
-class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate ,InputBarAccessoryViewDelegate{
-let currentUser = Sender(senderId: "Test", displayName: "Lebanon Dollar")
-    let otherUsers = Sender(senderId: "users", displayName: "")
-    var messages = [MessageType]()
 
+class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate ,InputBarAccessoryViewDelegate{
+    var database :DatabaseReference?
+    
+    let currentUser = Sender(senderId: "Test", displayName: "Lebanon Dollar")
+    let otherUsers = Sender(senderId: "users", displayName: "")
+    var messages : [MessageType] = []{
+        didSet{
+            DispatchQueue.main.async {
+                
+                self.messagesCollectionView.reloadData()
+            }
+        }
+    }
+    //    database
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        messagesCollectionView.delegate = self
-        messages.append(MessageSender(sentDate: Date(), sender: Sender(senderId: "asdasd", displayName: "Mina"), messageId: "sadsdasd", kind: .text("asas")))
-    
-        messages.append(MessageSender(sentDate: Date().addingTimeInterval(-12123), sender: otherUsers, messageId: "asdasd", kind: .text("Hellle")))
+        database = Database.database().reference()
+        //        messagesCollectionView.delegate = self
+        //        messages.append(MessageSender(sentDate: Date(), sender: Sender(senderId: "asdasd", displayName: "Mina"), messageId: "sadsdasd", kind: .text("asas")))
+        
+        //        messages.append(MessageSender(sentDate: Date().addingTimeInterval(-12123), sender: otherUsers, messageId: "asdasd", kind: .text("Hellle")))
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
+        
+        let controller = MessagesViewController()
+        controller.resignFirstResponder()
+        controller.setTypingIndicatorViewHidden(true, animated: true)
+        controller.hidesBottomBarWhenPushed = true
         // Do any additional setup after loading the view.
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        getData()
+        self.messagesCollectionView.scrollToBottom()
+        //        DispatchQueue.main.async {
+        //
+        //                self.messagesCollectionView.scrollToLastItem()
+        //
+        //        }
+        
+    }
+    override func viewDidLayoutSubviews() {
+        messagesCollectionView.contentInset.bottom = messageInputBar.frame.height
+        messagesCollectionView.scrollIndicatorInsets.bottom = messageInputBar.frame.height//input bar put in********
+    }
+    
+    
+    func getData(){
+        let ref =  database?.child("message")
+        ref?.observe(.childAdded, with: { (snapshot) in
+            print("asdasda")
+            let dic = snapshot.value as? [String:Any]
+            let uid = dic?["uid"]
+            let uname = dic?["uname"]
+            let date = dic?["messageTime"] as? Date
+            
+            let message = dic?["message"]
+            self.messages.append(MessageSender(sentDate: date ?? Date()
+                                               , sender: Sender(senderId: "Id", displayName: "\(uname ?? "")"), messageId: "\(uid)", kind: .text("\(message ?? "")")))
+            //            chatMessages.append((snapshot.value as? [String:Any]) ?? [:])
+        })
+        
+    }
+    
     func currentSender() -> SenderType {
+        
         return currentUser
     }
     
-    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType {
+    func messageForItem(at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageType{
+        //        messageForItem(at: <#T##IndexPath#>, in: <#T##<<error type>>#>)
         return messages[indexPath.section]
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
         return messages.count
     }
+    func avatarSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        return .zero
+    }
+    
+    func footerViewSize(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+        return CGSize(width: 0, height: 8)
+    }
+    
+    func heightForLocation(message: MessageType, at indexPath: IndexPath, with maxWidth: CGFloat, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        
+        return 0
+    }
     
 }
+
 //extension ChattViewController {
 //    private func insertNewMessage(_ message: Message) {
 //    //add the message to the messages array and reload it
