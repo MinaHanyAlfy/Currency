@@ -31,7 +31,7 @@ class SplachViewController: UIViewController,SwiftyGifDelegate,SendCoreData {
         didSet{
             DispatchQueue.main.async {
                 for curr in self.internationalData?.data ?? []{
-                    self.saveCurrency(currency: curr)
+                    
                 }
             }
         }
@@ -50,6 +50,7 @@ class SplachViewController: UIViewController,SwiftyGifDelegate,SendCoreData {
 //                print(self.internationalData)
 //            }
 //        }
+        deleteSavedCurrencies() 
         self.gifImageView.delegate = self
         do {
             let gif = try UIImage(gifName: "dollar.gif")
@@ -222,6 +223,9 @@ extension SplachViewController{
             case .success(let data):
                 DispatchQueue.main.async {
                     self?.internationalData = data
+                    for curr in self?.internationalData?.data ?? []{
+                        self?.saveCurrency(currency: curr)
+                    }
                 }
                
             case .failure(let error):

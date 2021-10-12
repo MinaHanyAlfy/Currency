@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 import Foundation
+//import Reachability
+//import a
 class ConverterViewController: UIViewController  {
     var dPrice : Double = 0.0
     var tPrice : Double = 0.0
@@ -23,6 +25,7 @@ class ConverterViewController: UIViewController  {
             
         }
     }
+    var currencies : [Currency] = []
     var arrCurrency: [Currency] = []{
         didSet{
             DispatchQueue.main.async {
@@ -40,7 +43,7 @@ class ConverterViewController: UIViewController  {
         super.viewDidLoad()
         registerCells()
         setUpUI()
-
+//        deleteSavedCurrencies()
     }
     
     private func registerCells(){
@@ -65,7 +68,11 @@ class ConverterViewController: UIViewController  {
     @IBAction func convertActionbtn(_ sender: Any) {
         if (valueTF.text != nil){
             getDataFromStorage(id: Int(valueTF.text ?? "") ?? 0)
-            
+          
+            print(arrCurrency)
+            calc()
+            self.convertsTableView.reloadData()
+            print(currencies)
         }
         
     }
@@ -83,6 +90,7 @@ class ConverterViewController: UIViewController  {
     }
     
     
+    
     //MARK:- Core Data Methods
     
     private func getDataFromStorage(id: Int){
@@ -96,16 +104,17 @@ class ConverterViewController: UIViewController  {
                     for curr in stored {
                         let localCurr = Currency(id:  curr.value(forKey: "id") as? Int, option1: curr.value(forKey: "option1") as? String, option2: curr.value(forKey: "option2") as? String, option3: curr.value(forKey: "option3") as? String, last_sell: curr.value(forKey: "last_sell") as? String, last_buy: curr.value(forKey: "last_buy") as? String, relative:  curr.value(forKey: "relative") as? String, type:  curr.value(forKey: "type") as? String, country:  curr.value(forKey: "country") as? String, state:  curr.value(forKey: "state") as? Int, created_at:  curr.value(forKey: "created_at") as? String, updated_at:  curr.value(forKey: "updated_at") as? String)
                         
-                        if localCurr.id ==  65 || localCurr.id == 162  || localCurr.id == 163 || localCurr.id == 43
+                        if localCurr.id ==  65 || localCurr.id == 162  || localCurr.id == 103 || localCurr.id == 143
                         {
-                            self.arrCurrency.append(localCurr)
+                            arrCurrency.append(localCurr)
                        
                         }
                         
                     }
-                var curr = Currency.init(id: 2, option1: "", option2: "دولار", option3: "1", last_sell: "", last_buy: "", relative: "", type: "Dollar", country: "عالمي", state: 5, created_at: "", updated_at: "")
+                var curr = Currency.init(id: 2, option1: "1", option2: "دولار", option3: "1", last_sell: "", last_buy: "", relative: "", type: "Dollar", country: "عالمي", state: 5, created_at: "", updated_at: "")
             
-                self.arrCurrency.append(curr)
+                    arrCurrency.append(curr)
+                    print(arrCurrency)
                 check(id: id)
                 }
             }catch let error as NSError{
@@ -113,99 +122,46 @@ class ConverterViewController: UIViewController  {
             }
                 
         }
-    
+    func getContext () -> NSManagedObjectContext {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.persistentContainer.viewContext
+    }
+    func deleteSavedCurrencies(){
+        let context = getContext()
+        var fetchRequest: NSFetchRequest<CurrencyCD> = CurrencyCD.fetchRequest()
+        let objects = try! context.fetch(fetchRequest)
+        print(objects)
+        for obj in objects {
+            
+            context.delete(obj)
+        }
+        
+        do {
+            try context.save()
+            print(fetchRequest)
+            print(objects)
+            // <- remember to put this :)
+        } catch {
+            // Do something... fatalerror
+        }
+        
+        
+        
+    }
     func check(id: Int)  {
         
         for i in 0...arrCurrency.count {
             
 //            if arrCurrency[i].id == id {
 //                self.arrCurrency.remove(at: i)
+//            self.convertsTableView.reloadData()
 //            }
         }
         print("asdasdasdasd")
         print(arrCurrency)
     }
 
-//    func getQuestions(){
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        let managedContext = appDelegate.persistentContainer.viewContext
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CurrencyCD")
-//        quests = []
-//        do {
-//            let questions = try managedContext.fetch(fetchRequest)
-//            //            let result = questions.last
-//            if questions.count > 0 {
-//                var questionsRepeat = [Datum]()
-//                for question in questions {
-//                    var questsw = Datum()
-//                    questsw.answerIDS = question.value(forKey: "answer_ids") as? String
-//                    questsw.qID = question.value(forKey: "q_id") as? Int
-//                    questsw.qQuestionText = question.value(forKey: "q_question_text") as? String
-//                    questsw.rates = question.value(forKey: "rates") as? Int
-//                    questsw.qRate = question.value(forKey: "q_rate") as? Double
-//                    questsw.qTypeID = question.value(forKey: "q_type_id") as? Int
-//                    questsw.qtName = question.value(forKey: "qt_name") as? String
-//                    questsw.answers = question.value(forKey: "answers") as? String
-//                    //                    questsw.allAnswer =
-//                    questsw.qgID = question.value(forKey: "qg_id") as? Int
-//                    questsw.qgName = question.value(forKey: "qg_name") as? String
-//                    questsw.totalAnswers = question.value(forKey: "total_answers") as? Int
-//                    quests.append(questsw)
-//                    //                    }
-//
-//                }
-//                print("Questions Number\(quests.count)")
-//                let questsNew = unique(source: quests)
-//                AppDelegate.questionsStored = questsNew
-//                print("Questions Number\(questsNew.count)")
-//
-//                print( AppDelegate.questionsStored)
-//                print("asdasdsadsadasd")
-//            }
-//
-//
-//        }catch let error as NSError {
-//            print(error)
-//            print("error core data")
-//        }
-//    }
-    //Add
-//    func addCurrencyToStorage(_ currency: Currency){
-//        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-//            let managedContext = appDelegate.persistentContainer.viewContext
-//            
-//            if currency.type != nil,!(isCurrencyFound(with: currency.id) ?? true){
-//                let newCurrency = CurrencyCD(context: managedContext)
-//                newCurrency.title = currency.relative
-//                newCurrency.value = currency.last_sell
-//                
-//                storedCurrencies += [newCurrency]
-//                
-//                do{
-//                    try managedContext.save()
-//                    print("<<<<< SAVED")
-//                }catch let error as NSError{
-//                    print(error)
-//                }
-//            }
-//        }
-//    }
-//    
-    
-    //Delete
-    func deleteFromStorage(at index:Int ){
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate{
-            let managedContext = appDelegate.persistentContainer.viewContext
-            managedContext.delete(storedCurrencies[index])
-            storedCurrencies.remove(at: index)
-            do{
-                try managedContext.save();
-                print("item Deleted")
-            }catch let error as NSError{
-                print(error);
-            }
-        }
-    }
+  
     //
     
     private func isCurrencyFound(with currencyID : Int?)->Bool?{
@@ -230,6 +186,7 @@ class ConverterViewController: UIViewController  {
 extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
+            
     }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -262,23 +219,116 @@ extension ConverterViewController : UICollectionViewDelegate,UICollectionViewDat
 //MARK:- TableView Delegate , TableView DataSource
 extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrCurrency.count
+        return currencies.count
     }
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ConverterTableViewCell", for: indexPath) as! ConverterTableViewCell
-        
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = .white
+        }else{
+            cell.backgroundColor = .systemGray6
+        }
+        var cuur = currencies[indexPath.row]
         if( valueTF.text != "0"){
-        
-//            let value = Double(valueTF.text!)
-            cell.priceLBL.text = arrCurrency[indexPath.row].option1
-            cell.titleLBL.text = arrCurrency[indexPath.row].option2
-//            let secValue = Double(data?.data[indexPath.row].option2 ?? "0.0")
-//            print(data?.data[indexPath.row].option2)
-//            print(secValue)
-//            cell.priceLBL.text = String(value! * secValue!)
+//            cell.priceLBL.text = cuur.option1
+//            cell.titleLBL.text = cuur.option2
+            var x : Double = 0.0
+//            var xD : Double = 0.0
+//            var xR : Double = 0.0
+//            var xL : Double = 0.0
+//            var xE : Double = 0.0
+            let value : Double = Double(valueTF.text ?? "0.0") ?? 0.0
+            let valueCurr : Double = Double(cuur.option1 ?? "0.0") ?? 0.0
+            
+            print(value , valueCurr)
+                        switch selectedCurr ?? "" {
+            case "EURO":
+                for cur in arrCurrency{
+                    if cur.id ?? 0 == 65{
+                        for cuur in arrCurrency{
+                            if cuur.id ?? 0 == 65{
+                                let valueCr : Double = Double(cuur.option1 ?? "0.0") ?? 0.0
+                                x = value * valueCr
+                            
+                            }
+                        }
+                   
+                    }
+                }
+                let  tot : Double = x / valueCurr
+             
+                cell.priceLBL.text = "\(tot.rounded(toPlaces: 4))"
+                cell.titleLBL.text = cuur.option2
+            case "LebanonLira":
+                for cur in arrCurrency{
+                    if cur.id ?? 0 == 103{
+                        for cuur in arrCurrency{
+                            if cuur.id ?? 0 == 103{
+                                let valueCr : Double = Double(cuur.option1 ?? "0.0") ?? 0.0
+                                x = value * valueCr
+                            
+                            }
+                        }
+                    }
+                }
+                let  tot : Double = x / valueCurr
+                cell.priceLBL.text = "\(tot.rounded(toPlaces: 4))"
+                cell.titleLBL.text = cuur.option2
+            case "TRY":
+                for cur in arrCurrency{
+                    if cur.id ?? 0 == 162{
+                        for cuur in arrCurrency{
+                            if cuur.id ?? 0 == 162{
+                                let valueCr : Double = Double(cuur.option1 ?? "0.0") ?? 0.0
+                                x = value * valueCr
+                            
+                            }
+                        }
+                    }
+                }
+                let  tot : Double = x / valueCurr
+                cell.priceLBL.text = "\(tot.rounded(toPlaces: 4))"
+                cell.titleLBL.text = cuur.option2
+                
+            case "REL":
+                for cur in arrCurrency{
+                    if cur.id ?? 0 == 143{
+                        for cuur in arrCurrency{
+                            if cuur.id ?? 0 == 143{
+                                let valueCr : Double = Double(cuur.option1 ?? "0.0") ?? 0.0
+                                x = value * valueCr
+                            
+                            }
+                        }
+                    }
+                }
+                var tot : Double = x / valueCurr
+                cell.priceLBL.text = "\(tot.rounded(toPlaces: 4))"
+                cell.titleLBL.text = cuur.option2
+//                print(x , val)
+            default:
+//                for cuur in arrCurrency{
+//                    if cuur.id ?? 0 == 2{
+//                        for cuur in arrCurrency{
+//                            if cuur.id ?? 0 == 2{
+//
+//                        var valueC : Double = Double(cuur.option1 ?? "0.0" ) ?? 0.0
+//                        x = value * valueC
+//                            }
+//
+//                        }
+//                    }
+//                }
+                let total : Double = value * valueCurr
+                cell.priceLBL.text =  "\(total.rounded(toPlaces: 4))"
+                cell.titleLBL.text = cuur.option2
+              
+              
+            }
+
         }else{
             
             
@@ -307,8 +357,54 @@ extension ConverterViewController : UITableViewDelegate,UITableViewDataSource{
         return headerView
     }
     
-    
+    func calc(){
+        currencies = []
+        self.convertsTableView.reloadData()
+        if selectedCurr ?? "" == "EURO"{
+            for cur in arrCurrency {
+                if cur.id ?? 0 != 65{
+                    currencies.append(cur)
+                }
+            }
+        }
+        if selectedCurr ?? "" == "Dollar"{
+            for cur in arrCurrency {
+                if cur.id ?? 0 != 2{
+                    currencies.append(cur)
+                }
+            }
+        }
+        if selectedCurr ?? "" == "REL"{
+            for cur in arrCurrency {
+                if cur.id ?? 0 != 143{
+                    currencies.append(cur)
+                }
+            }
+        }
+        if selectedCurr ?? "" == "TRY"{
+            for cur in arrCurrency {
+                if cur.id ?? 0 != 162{
+                    currencies.append(cur)
+                }
+            }
+        }
+        if selectedCurr ?? "" == "LebanonLira"{
+            for cur in arrCurrency {
+                if cur.id ?? 0 != 103{
+                    currencies.append(cur)
+                }
+            }
+        }
+        self.convertsTableView.reloadData()
+    }
    
   
 }
 
+extension Double {
+    /// Rounds the double to decimal places value
+    func rounded(toPlaces places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}

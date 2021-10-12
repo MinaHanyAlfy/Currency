@@ -363,6 +363,7 @@ PODS:
   - InputBarAccessoryView (5.1.0):
     - InputBarAccessoryView/Core (= 5.1.0)
   - InputBarAccessoryView/Core (5.1.0)
+  - Kingfisher (7.1.0)
   - leveldb-library (1.22.1)
   - MessageKit (3.3.0):
     - InputBarAccessoryView (~> 5.1.0)
@@ -389,6 +390,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Messaging
   - GoogleSignIn
+  - Kingfisher (~> 7.0)
   - MessageKit (~> 3.3.0)
   - ReachabilitySwift
   - SDWebImage
@@ -419,6 +421,7 @@ SPEC REPOS:
     - GTMAppAuth
     - GTMSessionFetcher
     - InputBarAccessoryView
+    - Kingfisher
     - leveldb-library
     - MessageKit
     - nanopb
@@ -452,6 +455,7 @@ SPEC CHECKSUMS:
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   InputBarAccessoryView: 19953f486a23e846e9487099f92bbe3456e46ce5
+  Kingfisher: cdabaf49be7ee7cc124f0f276b355edf61903cf8
   leveldb-library: 50c7b45cbd7bf543c81a468fe557a16ae3db8729
   MessageKit: 1f07618183be6d92b648ba7a384aafa097362a00
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
@@ -461,6 +465,6 @@ SPEC CHECKSUMS:
   SDWebImage: c666b97e1fa9c64b4909816a903322018f0a9c84
   SwiftyGif: 5d4af95df24caf1c570dbbcb32a3b8a0763bc6d7
 
-PODFILE CHECKSUM: ade82205a91889ec32000ac9f56232d48cade856
+PODFILE CHECKSUM: 2f7cbd0b34286c35d240fe6bff68ed12834cf2f4
 
 COCOAPODS: 1.11.2

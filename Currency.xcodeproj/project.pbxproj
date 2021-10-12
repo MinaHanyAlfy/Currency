@@ -975,7 +975,7 @@
 				CODE_SIGN_ENTITLEMENTS = Currency/CurrencyDebug.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FCL47U2TTD;
 				EXCLUDED_ARCHS = "armv6 armv7";
 				INFOPLIST_FILE = Currency/Info.plist;
@@ -1001,7 +1001,7 @@
 				CODE_SIGN_ENTITLEMENTS = Currency/Currency.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = FCL47U2TTD;
 				EXCLUDED_ARCHS = "armv6 armv7";
 				INFOPLIST_FILE = Currency/Info.plist;

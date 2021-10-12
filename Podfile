@@ -22,7 +22,7 @@ pod 'Firebase/Core'
 pod 'GoogleSignIn'
 pod 'Firebase/Firestore'
 pod 'SDWebImage'
-
+ pod 'Kingfisher', '~> 7.0'
 pod 'Firebase/Auth'
 
   target 'CurrencyTests' do
