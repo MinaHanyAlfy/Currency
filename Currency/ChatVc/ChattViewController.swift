@@ -33,6 +33,9 @@ struct MessageSender : MessageType {
 }
 
 class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate ,InputBarAccessoryViewDelegate{
+    let date = Date()
+    let calendar = Calendar.current
+//    private let database = Database.database().reference()
     //    func didTapBackground(in cell: MessageCollectionViewCell) {
     //        <#code#>
     //    }
@@ -133,7 +136,7 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
     func getData(){
         let ref =  database?.child("message")
         ref?.observe(.childAdded, with: { (snapshot) in
-            print("asdasda")
+         
             let dic = snapshot.value as? [String:Any]
             let uid = dic?["uid"]
             let uname = dic?["uname"]
@@ -166,7 +169,7 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
 //           }
        }
     private func getMessages(){
-        let ref =  database?.child("message")
+        let ref =  database?.child("message").queryLimited(toLast: 200)
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         ref?.observe(.childAdded, with: { [weak self] (DataSnapshot) in
@@ -185,7 +188,7 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
                 var kind : MessageKind = .text(messageText ?? "")
                 
                 let message = MessageSender(sentDate: date ?? Date(), sender: Sender(senderId: senderId ?? "", displayName: name ?? ""), messageId: "\(Int.random(in: 0...100))", kind: kind)
-                print(message)
+              
                 self.messages.append(message)
                 DispatchQueue.main.async {
                     self.messagesCollectionView.reloadData()
@@ -225,6 +228,20 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
 extension ChattViewController{
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else { return}
+        let hour = calendar.component(.hour, from: date)
+//        let minutes = calendar.component(.minute, from: date)
+//        let seconds = calendar.component(.second, from: date)
+        let obj : [String : Any] = [
+            "uid":"iOS\(date)\(Int.random(in: 0...100))" as NSString ,
+            "uname":"iOS" as NSString,
+            "message":"\(text ?? "")" as NSString,
+            "messageTime":"\(date)" as NSString
+    ]
+     
+        let ref = database?.child("message")
+   
+         ref?.child("\(obj["uid"])").setValue(obj)
+
         print("tapped")
         //        sendMessage(message: text, messageType: "text",toId: "\(userId ?? 0)",toName: userName ?? "")
         inputBar.inputTextView.text = nil

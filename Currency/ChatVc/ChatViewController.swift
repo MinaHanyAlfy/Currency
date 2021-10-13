@@ -49,11 +49,14 @@ class ChatViewController: UIViewController {
             let minutes = calendar.component(.minute, from: date)
             let seconds = calendar.component(.second, from: date)
             let obj : [String : Any] = [
-                "uid":"12asd1212312" as NSString ,
-                "uname":"Mine" as NSString,
-                "message":"\(sendTextField.text ?? "")" as NSString
+                "uid":"iOS\(date)\(Int.random(in: 0...100))" as NSString ,
+                "uname":"iOS" as NSString,
+                "message":"\(sendTextField.text ?? "")" as NSString,
+                "messageTime":date as NSDate
         ]
-            database.child("message").child("\(obj["uid"] ?? "")\(Int.random(in: 0...100))")
+         
+            
+//            self.ref.child("users").child(user.uid).setValue(["username": username])
         }
     }
 }
