@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideMenuViewController" customModule="Currency" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImage" destination="4sX-6p-pSu" id="7yg-cc-g8d"/>
+                <outlet property="menuTableView" destination="C87-yJ-rRT" id="5sx-cm-Yt8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dollar" translatesAutoresizingMaskIntoConstraints="NO" id="4sX-6p-pSu">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C87-yJ-rRT">
+                    <rect key="frame" x="0.0" y="128" width="414" height="768"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="4sX-6p-pSu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="53r-ZK-M5k"/>
+                <constraint firstAttribute="bottom" secondItem="4sX-6p-pSu" secondAttribute="bottom" id="Ccy-9R-Jr2"/>
+                <constraint firstItem="C87-yJ-rRT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="128" id="IaM-Pc-L4s"/>
+                <constraint firstAttribute="trailing" secondItem="4sX-6p-pSu" secondAttribute="trailing" id="L5P-4Q-2yB"/>
+                <constraint firstAttribute="bottom" secondItem="C87-yJ-rRT" secondAttribute="bottom" id="OHW-nd-GMC"/>
+                <constraint firstAttribute="trailing" secondItem="C87-yJ-rRT" secondAttribute="trailing" id="WhL-6b-ian"/>
+                <constraint firstItem="C87-yJ-rRT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ool-v1-Jht"/>
+                <constraint firstItem="4sX-6p-pSu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pi5-Jz-XKA"/>
+            </constraints>
+            <point key="canvasLocation" x="-72" y="21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="dollar" width="1080" height="1920"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

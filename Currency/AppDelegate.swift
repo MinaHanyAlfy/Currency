@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleSignIn
 @available(iOS 13.0, *)
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate,UNUserNotificationCenterDelegate {
@@ -22,9 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate,UNUserN
             application.registerUserNotificationSettings(settings)
         
         application.registerForRemoteNotifications()
-        
      
         return true
+    }
+    
+    func application(_ application: UIApplication, open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey: Any])
+      -> Bool {
+      return GIDSignIn.sharedInstance.handle(url)
     }
     func application(_ application: UIApplication,
                      didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {

@@ -13,6 +13,7 @@ import FirebaseFirestore
 import SDWebImage
 import FirebaseDatabase
 import Kingfisher
+import GoogleSignIn
 struct Messanger  {
     var message : String?
     var messageTime: Date?
@@ -33,58 +34,8 @@ struct MessageSender : MessageType {
 }
 
 class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLayoutDelegate,MessagesDisplayDelegate ,InputBarAccessoryViewDelegate{
-    //    func didTapBackground(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapMessage(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapAvatar(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapCellTopLabel(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapCellBottomLabel(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapMessageTopLabel(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapAccessoryView(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapImage(in cell: MessageCollectionViewCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didTapPlayButton(in cell: AudioMessageCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didStartAudio(in cell: AudioMessageCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didPauseAudio(in cell: AudioMessageCell) {
-    //        <#code#>
-    //    }
-    //
-    //    func didStopAudio(in cell: AudioMessageCell) {
-    //        <#code#>
-    //    }
-    //
+ 
+ 
     var database :DatabaseReference?
     
     let currentUser = Sender(senderId: "Test", displayName: "Lebanon Dollar")
@@ -100,6 +51,7 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
         messagesCollectionView.messagesDisplayDelegate = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDataSource = self
+        
         //messagesCollectionView.messageCellDelegate = self
         messageInputBar.delegate = self
         let controller = MessagesViewController()
@@ -116,20 +68,20 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
         messagesCollectionView.contentInset.bottom = messageInputBar.frame.height
         messagesCollectionView.scrollIndicatorInsets.bottom = messageInputBar.frame.height//input bar put in********
     }
-    //    private func sendMessage(message: String,messageType: String,toId: String,toName: String){
-    //        let refChats = database!.child("messages").
-    //           let companyChat = refChats.child(UserManager.shared.getCompanyId() ?? "")
-    //           let df = DateFormatter()
-    //           df.dateFormat = "yyyy-MM-dd HH:mm:ss"
-    //
-    //           let chatId = companyChat.child(currentUser.senderId).child(toId).childByAutoId()
-    //           let messageDic: [String: Any] = ["message_content": message,"from": currentUser.displayName,"from_id": currentUser.senderId ,"to": toName ,"to_id": toId,"type": messageType,"date": df.string(from: Date()),"user_image": userImage ?? "","company_image": UserManager.shared.getUserImage()?.absoluteString ?? ""]
-    //           chatId.setValue(messageDic)
-    //           checkChat()
-    //           let notMessage = messageType == "text" ? message : "Sent photo"
-    //           sendNotification(message: notMessage)
-    //       }
-    
+//        private func sendMessage(message: String,messageType: String,toId: String,toName: String){
+//            let refChats = database!.child("messages").
+//               let companyChat = refChats.child(UserManager.shared.getCompanyId() ?? "")
+//               let df = DateFormatter()
+//               df.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//
+//               let chatId = companyChat.child(currentUser.senderId).child(toId).childByAutoId()
+//               let messageDic: [String: Any] = ["message_content": message,"from": currentUser.displayName,"from_id": currentUser.senderId ,"to": toName ,"to_id": toId,"type": messageType,"date": df.string(from: Date()),"user_image": userImage ?? "","company_image": UserManager.shared.getUserImage()?.absoluteString ?? ""]
+//               chatId.setValue(messageDic)
+//               checkChat()
+//               let notMessage = messageType == "text" ? message : "Sent photo"
+//               sendNotification(message: notMessage)
+//           }
+//
     func getData(){
         let ref =  database?.child("message")
         ref?.observe(.childAdded, with: { (snapshot) in
@@ -145,28 +97,9 @@ class ChattViewController: MessagesViewController, MessagesDataSource,MessagesLa
             //            chatMessages.append((snapshot.value as? [String:Any]) ?? [:])
         })
     }
-    private func checkChat(){
-//        let ref = database?.child("message").
-//           let refChats = ref!.child("messages_count").child(companyId)
-           
-//           refChats.getData { error, data in
-//               if let SnapData = data.value as? [String: Any] ,  let messageCount = SnapData["count"] as? Int{
-//                   if messageCount == 50{
-//                       refChats.updateChildValues(["count": 1])
-//                       self.sendCoin()
-//                   }
-//                   else{
-//                       refChats.updateChildValues(["count": messageCount + 1])
-//                   }
-//               }
-//               else{
-//                   let messageDic: [String: Any] = ["count": 1]
-//                   refChats.setValue(messageDic)
-//               }
-//           }
-       }
+
     private func getMessages(){
-        let ref =  database?.child("message")
+        let ref =  database?.child("message").queryLimited(toLast: 200)
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd HH:mm:ss"
         ref?.observe(.childAdded, with: { [weak self] (DataSnapshot) in
@@ -226,7 +159,7 @@ extension ChattViewController{
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else { return}
         print("tapped")
-        //        sendMessage(message: text, messageType: "text",toId: "\(userId ?? 0)",toName: userName ?? "")
+//                sendMessage(message: text, messageType: "text",toId: "\(userId ?? 0)",toName: userName ?? "")
         inputBar.inputTextView.text = nil
     }
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
@@ -254,7 +187,7 @@ extension ChattViewController{
 //extension ChattViewController {
 //    private func insertNewMessage(_ message: Message) {
 //    //add the message to the messages array and reload it
-//    messages.append(MessageSender())
+////        messages.append(MessageSender(sentDate: <#Date#>, sender: <#SenderType#>, messageId: <#String#>, kind: <#MessageKind#>))
 //    messagesCollectionView.reloadData()
 //    DispatchQueue.main.async {
 //    self.messagesCollectionView.scrollToLastItem(at: .bottom, animated: true)

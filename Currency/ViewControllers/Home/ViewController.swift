@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SideMenu
 @available(iOS 13.0, *)
 class ViewController: UIViewController {
     
@@ -19,7 +19,10 @@ class ViewController: UIViewController {
         setupUI()
         registerCell()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        setupUI()
+
+    }
     private func setupUI(){
         
         self.navigationController?.navigationBar.backgroundColor = .orange
@@ -31,8 +34,29 @@ class ViewController: UIViewController {
         headerView.layer.borderColor = UIColor.systemGray4.cgColor
         adView.layer.borderWidth = 2
         adView.layer.borderColor = UIColor.systemGray4.cgColor
+        setUpDesignBar()
+        
+//        self.navigationController?
     }
     
+    func setUpDesignBar(){
+
+
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+        self.navigationController?.navigationBar.tintColor = .white
+
+        let myimageRight = UIImage(named: "icons8-menu-48")?.withRenderingMode(.alwaysOriginal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: myimageRight, style: .plain, target: self,action: #selector(buttonTappedMenu))
+     
+    }
+    @objc func buttonTappedMenu(){
+        let menuVc = SideMenuViewController()
+        let menu = SideMenuNavigationController(rootViewController: menuVc)
+        present(menu, animated: true, completion: nil)
+    }
     private func registerCell(){
         homeCollectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "HomeCollectionViewCell")
     }

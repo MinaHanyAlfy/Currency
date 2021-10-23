@@ -24,7 +24,7 @@ pod 'Firebase/Firestore'
 pod 'SDWebImage'
  pod 'Kingfisher', '~> 7.0'
 pod 'Firebase/Auth'
-
+pod 'SideMenu', '~> 6.0'
   target 'CurrencyTests' do
     inherit! :search_paths
     # Pods for testing

@@ -34,7 +34,7 @@ class DollarViewController: UIViewController {
     @IBAction func sharePriceAction(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "ShareViewController") as! ShareViewController
         //vc.recivedData = data?.data[0]
-        navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     private var data: CurrencyModel?{
