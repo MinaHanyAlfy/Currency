@@ -42,10 +42,11 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
-//        case 0:
-//            let vc =   self.storyboard?.instantiateViewController(withIdentifier: "DollarViewController") as! DollarViewController
-//        vc.title = "العملات المحليه"
-//            self.navigationController?.pushViewController(vc, animated: true)
+        case 0:
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let secondViewController = storyboard.instantiateViewController(withIdentifier: "DollarViewController") as! DollarViewController
+            secondViewController.title = "العملات المحليه"
+            self.navigationController?.pushViewController(secondViewController , animated: true)
         case 1:
             let vc = ChattViewController()
             vc.title = "الدردشه"
@@ -61,9 +62,10 @@ extension SideMenuViewController : UITableViewDelegate,UITableViewDataSource{
             self.navigationController?.pushViewController(vc, animated: true)
             
         case 5:
-            let convertVC = self.storyboard?.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let convertVC = storyboard.instantiateViewController(identifier: "ConverterViewController") as! ConverterViewController
             //            let vc = EmptyViewController()
-            convertVC.title = "محول العملات"
+//            convertVC.title = "محول العملات"
             self.navigationController?.pushViewController(convertVC, animated: true)
         case 4:
             let vc = NewsViewController()
